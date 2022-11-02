@@ -1,0 +1,127 @@
+
+
+.bannerBox{
+   /*  background-image: url('../../Images/check.jpg'); */
+   background-image: url(https://talentumph.com/wp-content/uploads/2020/08/tph-banner-2.jpg);
+    height: 85vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+   /*   margin-left: 25px;  */
+   padding-left: 20px;
+    position: sticky;
+    z-index: -1;
+    top: 0;
+}
+.bannerBox h1{
+    color: white;
+    font-size: 60px;
+    font-weight: 800;
+}
+.bannerBox h2{
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.whyMe{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    background: white;
+    margin: 40px 0px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    justify-items: center;
+}
+.whyMe img{
+    width: 350px;
+}
+.whyMeText{
+    width: 450px;
+}
+.whyMeText p{
+    font-size: 22px;
+    font-style: italic;
+    color: rgb(96, 94, 94);
+    text-align: justify;
+}
+.spotsContainer{
+    margin-top: 150px;
+    background:white;
+}
+.spotsContainer h3{
+    text-align: center;
+    margin: 0 auto;
+    font-size: 35px;
+    color: rgb(67, 65, 65);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+marquee{
+    font-size: 30px;
+    font: bold;
+    font-style: italic;
+    color: rgb(247, 243, 243);
+    word-spacing: 20px;
+    top: 0;
+}
+.spots{
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+}
+
+
+@media screen and (max-width:600px){
+    .bannerBox h1{
+        font-size: 30px;
+        text-align:center
+    }
+    .whyMe{
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+    .whyMeText{
+        width: 345px;
+    }
+    .whyMe p{
+        margin-bottom: 30px;
+    }
+    .spots{
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding:0;
+    }
+    .active{
+        border: none;
+    }
+}
+
+@media screen and (max-width:400px ){
+    .bannerBox h1{
+        font-size: 22px;
+    }
+    .whyMe{
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    .whyMeText{
+        width: 345px;
+    }
+    .whyMeText p{
+        font-size:15px;
+    }
+    .spots{
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+}
