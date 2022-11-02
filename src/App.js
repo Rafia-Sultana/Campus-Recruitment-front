@@ -7,9 +7,7 @@ import Footer from './Components/Footer/Footer';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Login from './Components/Login/Login';
 import SignUp from './Components/Login/SignUp';
-import app from './firebase.init';
-import { getAuth } from "firebase/auth";
-const auth = getAuth(app);
+
 
 function App() {
   return (
