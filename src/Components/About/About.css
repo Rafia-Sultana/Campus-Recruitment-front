@@ -1,0 +1,37 @@
+.bannerBoxAbout{
+    /*  background-image: url('../../Images/check.jpg'); */
+    background-image: url(https://talentumph.com/wp-content/uploads/2020/08/tph-banner-about2.jpg);
+/*     filter: brightness(50%); */
+    height: 85vh;
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+     position: relative;
+     display: flex;
+     align-items: center;
+     flex-direction:column; 
+     justify-content: center;
+     width: 100%;
+     color: white;
+     padding-left: 20px;
+     position: sticky;
+     z-index: -1;
+     top: 0;
+     font-size:xx-large;
+     font-weight: 800;
+ }
+ .whyMeAbout{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    background: white;
+    margin: 40px 0px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    justify-items: center;
+    font-size: 22px;
+ /* padding-left: 100px; */
+    padding: 130px 80px 50px 80px;
+    color: black;
+    text-align: justify;
+}
