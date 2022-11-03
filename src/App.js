@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Header from './Components/Header/Header';
-import Home from './Components/Home/Home';
-import Footer from './Components/Footer/Footer';
-import Dashboard from './Components/Dashboard/Dashboard';
-import Login from './Components/Login/Login';
-import SignUp from './Components/Login/SignUp';
-import About from './Components/About/About';
+import Header from './Pages/Header/Header';
+import Home from './Pages/Home/Home';
+import Footer from './Pages/Footer/Footer';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import Login from './Pages/Login/Login';
+import SignUp from './Pages/Login/SignUp';
+import About from './Pages/About/About';
 
 
 function App() {
