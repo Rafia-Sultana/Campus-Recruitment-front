@@ -24,11 +24,13 @@ const Dashboard = () => {
       <div className="drawer-side">
         <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
         <ul className="menu p-5 overflow-y-auto w-60 bg-primary text-base-100 font-semibold">
-  <li className=" mt-10 mb-4">Total Registered Company</li>
+  
+  <Link to='/dashboard/table' className=" mt-10 mb-4">Total Registered Company  </Link>
+
   <li className=" mt-5 mb-4">Total Candidate Registered</li>
   <li className="mt-5 mb-4">Total Vacancy</li>
   <li className="mt-5 mb-4" >Reports</li>
-  <li className=" mt-5 mb-4" >Change Password</li>
+  <li className=" mt-5 mb-4" >Change Password</li> 
   <li className=" mt-5 mb-4" >LogOut</li>
           
         </ul>
