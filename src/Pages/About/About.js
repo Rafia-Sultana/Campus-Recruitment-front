@@ -46,12 +46,17 @@ const About = () =>{
         </h2>
     </div>
 
-    <section>
-        <div className='flex flex-wrap '>
-            <h1>Our Core Values</h1>
-            <h4>TalentumPH is dedicated to fostering creative and resourceful means of understanding market trends and promulgating effective research on the latest sourcing strategies.</h4>
+    <section  >
+        <div className='flex flex-wrap justify-center mt-28'>
+            <h1 className='text-4xl font-semibold font-sans'>Our Core Values</h1>
+            <h4 className='mt-4'>TalentumPH is dedicated to fostering creative and resourceful means of understanding market trends and promulgating effective research on the latest sourcing strategies.</h4>
         </div>
-        <img src={girl} alt=''  />
+       <div>
+       <img src={girl} alt=''  />
+       <div>
+        
+       </div>
+       </div>
     </section>
 
 
