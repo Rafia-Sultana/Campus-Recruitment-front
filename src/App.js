@@ -13,6 +13,7 @@ import Notfound from './Pages/NotFound/NotFound';
 import RegisteredCandidate from './Components/RegisteredCandidate/RegCandidate';
 import RegisteredCompany from './Components/RegisteredCompany/RegisteredCompany';
 import TotalVacancy from './Components/TotalVacancy/TotalVacancy';
+import JobDetails from './Pages/JobDetails/JobDetails';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           </Route>
 
           <Route path='/about' element={<About />}></Route>
+          <Route path='/view' element={<JobDetails></JobDetails>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/signup' element={<SignUp></SignUp>}></Route>
           <Route path='*' element={<Notfound></Notfound>}></Route>
