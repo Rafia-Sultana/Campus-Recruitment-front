@@ -1,8 +1,12 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
+import {BsFillStarFill} from 'react-icons/bs'
+import {FaUserFriends} from 'react-icons/fa'
+import {FaLock } from 'react-icons/fa'
 import boy from '../../Images/boy.png'
 import girl from '../../Images/girl.jpg'
 import './About.css'
+import CoreValues from './CoreValues';
 
 const About = () =>{
     return(
@@ -46,18 +50,11 @@ const About = () =>{
         </h2>
     </div>
 
-    <section  >
-        <div className='flex flex-wrap justify-center mt-28'>
-            <h1 className='text-4xl font-semibold font-sans'>Our Core Values</h1>
-            <h4 className='mt-4'>TalentumPH is dedicated to fostering creative and resourceful means of understanding market trends and promulgating effective research on the latest sourcing strategies.</h4>
-        </div>
-       <div>
-       <img src={girl} alt=''  />
-       <div>
-        
-       </div>
-       </div>
-    </section>
+   <CoreValues></CoreValues>
+
+
+
+
 
 
         </div>
