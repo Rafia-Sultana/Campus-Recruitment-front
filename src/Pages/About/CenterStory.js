@@ -1,4 +1,6 @@
 import React from "react";
+import boy from '../../Images/boy.png'
+import Fade from 'react-reveal/Fade';
 const CenterStory = () =>{
     return(
         <div>
