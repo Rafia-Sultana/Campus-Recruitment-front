@@ -18,11 +18,11 @@ const Dashboard = () => {
       </div>
       <div className="drawer-side">
         <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
-        <ul className="menu p-5 overflow-y-auto w-60 bg-primary text-base-100 font-semibold">
+        <ul className="menu p-5 overflow-y-auto w-60 bg-yellow-600 text-base-100 font-semibold">
 
-    {/*       <Link to='/dashboard/table' className=" mt-10 mb-4">Total Registered Company  </Link> */}
+
           <Link to='/dashboard/registeredCompany' className=" mt-10 mb-4">Total Registered Company  </Link>
-          <Link to='/dashboard/registeredCandidate' className=" mt-5 mb-4">Total Registered Candidate  </Link>
+          <Link to='/dashboard/registeredCandidate' className=" mt-5 mb-4" >Total Registered Candidate  </Link>
           <Link to='/dashboard/totalVacancy' className=" mt-5 mb-4">Total Vacancy  </Link>
           
 

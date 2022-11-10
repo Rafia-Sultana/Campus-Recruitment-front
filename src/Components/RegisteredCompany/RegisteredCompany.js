@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 const RegisteredCompany = () =>{
     return(
         <div>
@@ -13,7 +14,7 @@ const RegisteredCompany = () =>{
         <th>location</th> 
         <th>Mbl No.</th> 
         <th>Reg. Date</th> 
-        <th>Last Login</th> 
+        
         <th>Action</th>
       </tr>
     </thead> 
@@ -25,7 +26,62 @@ const RegisteredCompany = () =>{
         <td>Littel, Schaden and Vandervort</td> 
         <td>Canada</td> 
         <td>12/16/2020</td> 
-        <td>Blue</td>
+       
+    
+        
+        <div>
+
+        {/* The button to open modal */}
+        <label htmlFor="my-modal-6" className="btn">View Details</label>
+        
+        {/* Put this part before </body> tag */}
+        <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+        <div className="modal modal-bottom sm:modal-middle">
+          <div className="modal-box">
+          <h2 className='text-center text-3xl font-bold text-slate-500 mb-2'>Company Information</h2>
+          <input type="text" placeholder="Company_Name" className="input input-bordered input-warning w-full max-w-xs mt-6" />
+          <input type="text" placeholder="Company_URL" className="input input-bordered input-warning w-full max-w-xs mt-6" />
+         
+          <div className='flex justify-between mb-4 my-4'>
+          <input type="text" placeholder="Email" className="input input-bordered input-warning w-full max-w-xs mr-2" />
+          <input type="text" placeholder="Phone_Number" className="input input-bordered input-warning w-full max-w-xs" />
+         </div>
+    {    /** <div  className='flex justify-between mb-4 '>
+         <input type="text" placeholder="Gender" className="input input-bordered input-warning w-full max-w-xs mr-2" />
+         <input type="text" placeholder="Age" className="input input-bordered input-warning w-full max-w-xs mr-2" />
+         <input type="text" placeholder="DOB" className="input input-bordered input-warning w-full max-w-xs" />
+         </div> */}
+         <select className="select select-warning w-full max-w-xs">
+         <option disabled selected>City</option>
+         <option>Cheese</option>
+         <option>Veggie</option>
+         <option>Pepperoni</option>
+         <option>Margherita</option>
+         <option>Hawaiian</option>
+        </select>
+        
+        <select className="select select-warning select-sm w-full max-w-xs mt-4">
+          <option disabled selected>Reg. Date</option>
+          <option>10/11/22</option>
+          <option>11/11/22</option>
+          <option>12/11/22</option>
+        </select>
+        
+            
+            <div className="modal-action">
+              <label htmlFor="my-modal-6" className="btn">submit</label>
+            </div>
+          </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+    
       </tr>
       <tr>
         <th>2</th> 

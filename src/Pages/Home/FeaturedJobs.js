@@ -38,7 +38,7 @@ const FeaturedJobs = ()=>{
           Full Time</p>
           </div>
           <div className="card-actions justify-center">
-          <button className="btn btn-warning w-9/12"><Link to='/view'>View Details</Link></button>
+          <button className="btn btn-warning w-9/12"><Link to='/viewdetails'>View Details</Link></button>
         </div>
   </div>
 </div>
