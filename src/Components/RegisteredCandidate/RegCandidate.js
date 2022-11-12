@@ -3,15 +3,19 @@ import { Link, Outlet} from 'react-router-dom'
 const RegisteredCandidate = () =>{
 
 const handleStudentInfo = (e) =>{
-  const email=e.target.email.value;
-  const name=e.target.fname.value;
-  console.log(email,name);
+  e.preventDefault()
+    const name = e.target.name.value
+    const email = e.target.email.value
+    const gender = e.target.gender .value
+    const city = e.target.city.value
+    const dob = e.target.dob.value
+    const age = e.target.age.value
+    const reg_date = e.target.reg_date.value
+   
+    const phone_number = e.target.phone_number.value
+    console.log(name,email,phone_number,gender ,city,dob,reg_date,age)
 }
-
-
-
-
-    return(
+ return(
         <div>
      
        
@@ -39,51 +43,155 @@ const handleStudentInfo = (e) =>{
         <td>12/16/2020</td> 
         
 
-
-
-<div >
+  {/**modal starts here */}
 {/* The button to open modal */}
-<label htmlFor="my-modal-6" className="btn">View Details</label>
+<label htmlFor="my-modal-6" className="btn">VIEW DETAILS</label>
 
 {/* Put this part before </body> tag */}
 <input type="checkbox" id="my-modal-6" className="modal-toggle" />
 <div className="modal modal-bottom sm:modal-middle">
   <div className="modal-box">
-  <h2 className='text-center text-3xl font-bold text-slate-500 mb-2'>Student Information</h2>
-  <input type="text" name='fname' placeholder="Full_Name" className="input input-bordered input-warning w-full max-w-xs mt-6" />
  
-  <div className='flex justify-between mb-4 my-4'>
-  <input type="text" name='email'  placeholder="Email" className="input input-bordered input-warning w-full max-w-xs mr-2" />
-  <input type="text" placeholder="Phone_Number" className="input input-bordered input-warning w-full max-w-xs" />
- </div>
- <div  className='flex justify-between mb-4 '>
- <input type="text" placeholder="Gender" className="input input-bordered input-warning w-full max-w-xs mr-2" />
- <input type="text" placeholder="Age" className="input input-bordered input-warning w-full max-w-xs mr-2" />
- <input type="text" placeholder="DOB" className="input input-bordered input-warning w-full max-w-xs" />
- </div>
- <select className="select select-warning w-full max-w-xs">
- <option disabled selected>City</option>
- <option>Cheese</option>
- <option>Veggie</option>
- <option>Pepperoni</option>
- <option>Margherita</option>
- <option>Hawaiian</option>
-</select>
+  <div className="modal-action flex justify-center mt-0 ">
+  <label className="label">
+          <span className="label-text font-bold text-3xl ">Student Information</span>
+      </label>
+  <label htmlFor="my-modal-6" className="btn btn-sm btn-circle absolute bg-red-600 right-2 top-2">X</label>
+</div>
 
-<select className="select select-warning select-sm w-full max-w-xs mt-4">
-  <option disabled selected>Reg. Date</option>
-  <option>10/11/22</option>
-  <option>11/11/22</option>
-  <option>12/11/22</option>
-</select>
+  <form onSubmit={handleStudentInfo}>
 
+  <div className="form-control w-full max-w-xs mt-5">
+   {  /*  <label className="label">
+          <span className="label-text">Name</span>
+      </label> */}
+      <input
+          name='name' 
+          type="text"
+          placeholder="Name"
+          className="input input-bordered w-full max-w-xs"
+       />
+      
+  </div>
+ <div className='flex justify-between mt-5'>
+ <div className="form-control w-1/2 max-w-xs mr-2 ">
+ { /*    <label className="label">
+         <span className="label-text">Email</span>
+     </label> */}
+     <input
+         name='email'
+         type="email"
+         placeholder="Email"
+         className="input input-bordered w-full max-w-xs"
+       
+     />
     
-    <div className="modal-action">
-      <label htmlFor="my-modal-6" className="btn" onSubmit={handleStudentInfo}>submit</label>
-    </div>
+ </div>
+ <div className="form-control w-1/2 max-w-xs">
+ {  /*   <label className="label">
+         <span className="label-text">Phone_number</span>
+     </label> */}
+     <input
+     name='phone_number'
+         type="tel"
+         placeholder="Phone_number"
+         className="input input-bordered w-full max-w-xs"
+      
+     />
+     <br></br>
+    
+ </div>
+</div>
+ <div className='flex justify-between'>
+ <div className="form-control w-1/2 max-w-xs mr-2">
+ { /*    <label className="label">
+         <span className="label-text">Email</span>
+     </label> */}
+     <input
+         name='gender'
+         type="text"
+         placeholder="Gender"
+         className="input input-bordered w-full max-w-xs"
+       
+     />
+    
+ </div>
+ <div className="form-control w-1/2 max-w-xs mr-2">
+ {  /*   <label className="label">
+         <span className="label-text">Phone_number</span>
+     </label> */}
+     <input
+     name='age'
+         type="number"
+         placeholder="Age"
+         className="input input-bordered w-full max-w-xs"
+      
+     />
+     <br></br>
+    
+ </div>
+ <div className="form-control w-1/2 max-w-xs">
+ {  /*   <label className="label">
+         <span className="label-text">Phone_number</span>
+     </label> */}
+     <input
+     name='dob'
+         type="text"
+         placeholder="DOB"
+         className="input input-bordered w-full max-w-xs"
+      
+     />
+     <br></br>
+    
+ </div>
+</div>
+
+
+<div className="form-control w-full max-w-xs">
+{  /*   <label className="label">
+        <span className="label-text">Phone_number</span>
+    </label> */}
+    <input
+    name='city'
+        type="text"
+        placeholder="City"
+        className="input input-bordered w-full max-w-xs"
+     
+    />
+    <br></br>
+   
+</div>
+<div className="form-control w-full max-w-xs">
+{  /*   <label className="label">
+        <span className="label-text">Phone_number</span>
+    </label> */}
+    <input
+    name='reg_date'
+        type="date"
+        placeholder="Reg_date"
+        className="input input-bordered w-full max-w-xs"
+     
+    />
+    <br></br>
+   
+</div>
+
+ 
+  <input className='btn btn-warning w-full max-w-xs text-white' type="submit" value="Update" />
+</form>
+
+
+
+  
   </div>
 </div>
-</div>
+
+
+
+        {/**modal ends here */}
+
+
+
 
 
 
