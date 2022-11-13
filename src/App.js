@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { Route, Routes,BrowserRouter } from 'react-router-dom';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Header from './Pages/Header/Header';
 import Home from './Pages/Home/Home';
 import Footer from './Pages/Footer/Footer';
@@ -20,6 +20,8 @@ import NewApplication from './Pages/JobApplication/NewApplication';
 import SortListed from './Pages/JobApplication/SortListed';
 import Rejected from './Pages/JobApplication/Rejected';
 import All from './Pages/JobApplication/All';
+import DashLayOut from './Components/DashLayOut';
+
 
 
 function App() {
@@ -30,8 +32,9 @@ function App() {
         {/* <BrowserRouter> */}
         <Routes>
           <Route path='/' element={<Home></Home>} />
-          <Route path='/dashboard' element={<Dashboard />}>
-          
+          <Route path='/dashboard' element={<DashLayOut />}>
+            <Route index element={<Dashboard />} />
+
             <Route path='registeredCandidate' element={<RegisteredCandidate></RegisteredCandidate>}> </Route>
             <Route path='registeredCompany' element={<RegisteredCompany></RegisteredCompany>}></Route>
             <Route path='totalVacancy' element={<TotalVacancy></TotalVacancy>}></Route>
@@ -40,7 +43,7 @@ function App() {
             <Route path='sortlisted' element={<SortListed></SortListed>}></Route>
             <Route path='rejected' element={<Rejected></Rejected>}></Route>
             <Route path='all' element={<All></All>}></Route>
-         </Route>
+          </Route>
 
           <Route path='/about' element={<About />}></Route>
           <Route path='/viewdetails' element={<JobDetails></JobDetails>}></Route>
