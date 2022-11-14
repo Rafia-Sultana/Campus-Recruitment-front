@@ -16,10 +16,10 @@ import TotalVacancy from './Components/TotalVacancy/TotalVacancy';
 import JobDetails from './Pages/JobDetails/JobDetails';
 import Stu_details from './Components/RegisteredCandidate/Stu_details';
 import AddVacancy from './Components/AddVacancy/AddVacancy';
-import NewApplication from './Pages/JobApplication/NewApplication';
-import SortListed from './Pages/JobApplication/SortListed';
-import Rejected from './Pages/JobApplication/Rejected';
-import All from './Pages/JobApplication/All';
+import NewApplication from './Components/JobApplication/NewApplication';
+import SortListed from './Components/JobApplication/SortListed';
+import Rejected from './Components/JobApplication/Rejected';
+import All from './Components/JobApplication/All';
 import DashLayOut from './Components/DashLayOut';
 
 
