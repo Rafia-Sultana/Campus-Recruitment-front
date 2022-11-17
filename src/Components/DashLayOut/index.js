@@ -32,7 +32,8 @@ export function DashLayOut() {
                         {  /*    <li className="mt-5 mb-4" >Reports</li>
 <li className=" mt-5 mb-4" >Change Password</li>
 <li className=" mt-5 mb-4" >LogOut</li> */}
-                        <li className=" mt-5 mb-4" >Fill Education Form</li>
+
+                        <Link to='/dashboard/fillEduForm' className=" mt-5 mb-4">Fill Education Form </Link>
                         <Link to='/dashboard/sortlisted' className=" ">Sort Listed Application </Link>
                         <li className=" mt-5 mb-4" >View Vacancy</li>
                         <li className=" mt-5 mb-4" >History of applied job</li>
