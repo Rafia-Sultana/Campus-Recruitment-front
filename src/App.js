@@ -24,6 +24,7 @@ import DashLayOut from './Components/DashLayOut';
 import FillEduForm from './Components/FillEduForm/FillEduForm';
 import ViewVacancy from './Components/ViewVacancy/ViewVacancy';
 import ApplyJob from './Components/ApplyJob/ApplyJob';
+import HistoryOfAppliedJob from './Components/HistoryOfAppliedJob/HistoryOfAppliedJob';
 
 
 
@@ -41,9 +42,10 @@ function App() {
             <Route path='registeredCandidate' element={<RegisteredCandidate></RegisteredCandidate>}> </Route>
             <Route path='registeredCompany' element={<RegisteredCompany></RegisteredCompany>}></Route>
             <Route path='totalVacancy' element={<TotalVacancy></TotalVacancy>}></Route>
-            <Route path='viewvacancy' element={<ViewVacancy></ViewVacancy>}>
-            </Route>
-            <Route path='apply' element={<ApplyJob></ApplyJob>}> </Route>
+            <Route path='viewvacancy' element={<ViewVacancy></ViewVacancy>}></Route>
+            <Route path='history' element={<HistoryOfAppliedJob></HistoryOfAppliedJob>}></Route>
+
+            <Route path='apply/:id' element={<ApplyJob></ApplyJob>}> </Route>
             <Route path='fillEduForm' element={<FillEduForm></FillEduForm>}></Route>
             <Route path='addVacancy' element={<AddVacancy></AddVacancy>}></Route>
             <Route path='new' element={<NewApplication></NewApplication>}></Route>

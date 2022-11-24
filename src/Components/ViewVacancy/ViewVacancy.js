@@ -36,7 +36,7 @@ const ViewVacancy = () => {
                                 <td>{postJob.location}</td>
                                 <td>{postJob.apply_date} </td>
                                 <td>{postJob.last_date}</td>
-                                <Link to="/dashboard/apply" className='bg-green-500 rounded-lg  mt-4 px-3 pb-1'>Apply For Job</Link>
+                                <Link to={`/dashboard/apply/${postJob._id}`} className='bg-green-500 rounded-lg  mt-4 px-3 pb-1'>Apply For Job</Link>
                             </tr>
 
                             )
