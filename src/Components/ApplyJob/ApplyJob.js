@@ -9,11 +9,25 @@ const ApplyJob = () => {
     console.log(id)
     const [postJobs, setPostJobs] = useState([])
     const [applyJobs, setApplyJobs] = useState([])
+    console.log(postJobs);
+
     useEffect(() => {
-        fetch('http://localhost:5000/user')
+        fetch(`http://localhost:5000/user/${id}`)
             .then(res => res.json())
             .then(data => setPostJobs(data))
     }, [])
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/apply/${id}`)
+            .then(res => res.json())
+            .then(data => console.log("singleData.....", data))
+    }, [])
+
+    // useEffect(() => {
+    //     console.log("postjobs......", postJobs);
+    // }, [postJobs])
+
+
     const stuInfo = {}
     const handleApply = (e) => {
         e.preventDefault()
@@ -37,23 +51,19 @@ const ApplyJob = () => {
                 e.target.reset();
             })
 
-
-
-
-
     }
 
     useEffect(() => {
         fetch(`http://localhost:5000/apply/${id}`)
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => console.log("id............", data))
     }, [])
 
 
 
 
-    const data = postJobs.find(job => job.email === stuInfo.email)
-    console.log(data)
+    // const data = postJobs.find(job => job.email === stuInfo.email)
+    // console.log("find...........", data)
     return (
         <div className='border-dashed border-2  border-amber-600'>
 
@@ -81,9 +91,11 @@ const ApplyJob = () => {
 
                                                         </label>
                                                         <div className=" border-solid border-2 border-gray-600 rounded p-2 text-left disabled">
-                                                            {
-                                                                postJobs.map(postJob => <li>{postJob.jobTitle}</li>)
-                                                            }
+
+                                                            <ul>
+                                                                <li> {postJobs?.jobTitle}</li>
+                                                            </ul>
+
                                                         </div>
                                                     </div>
 

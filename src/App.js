@@ -25,6 +25,9 @@ import FillEduForm from './Components/FillEduForm/FillEduForm';
 import ViewVacancy from './Components/ViewVacancy/ViewVacancy';
 import ApplyJob from './Components/ApplyJob/ApplyJob';
 import HistoryOfAppliedJob from './Components/HistoryOfAppliedJob/HistoryOfAppliedJob';
+import MakeCV from './Components/FillEduForm/MakeCv';
+import CvForm from './Components/FillEduForm/CvForm';
+import CvInfo from './Components/FillEduForm/CvInfo';
 
 
 
@@ -47,6 +50,8 @@ function App() {
 
             <Route path='apply/:id' element={<ApplyJob></ApplyJob>}> </Route>
             <Route path='fillEduForm' element={<FillEduForm></FillEduForm>}></Route>
+            <Route path='cvform' element={<CvForm></CvForm>}></Route>
+            <Route path='cvinfo' element={<CvInfo></CvInfo>}></Route>
             <Route path='addVacancy' element={<AddVacancy></AddVacancy>}></Route>
             <Route path='new' element={<NewApplication></NewApplication>}></Route>
             <Route path='sortlisted' element={<SortListed></SortListed>}></Route>

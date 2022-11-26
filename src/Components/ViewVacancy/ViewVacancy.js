@@ -30,13 +30,13 @@ const ViewVacancy = () => {
                     <tbody>
 
                         {
-                            postJobs.map(postJob => <tr>
+                            postJobs.map((postJob, index) => <tr key={index}>
                                 <td></td>
                                 <td>{postJob.jobTitle}</td>
                                 <td>{postJob.location}</td>
                                 <td>{postJob.apply_date} </td>
                                 <td>{postJob.last_date}</td>
-                                <Link to={`/dashboard/apply/${postJob._id}`} className='bg-green-500 rounded-lg  mt-4 px-3 pb-1'>Apply For Job</Link>
+                                <td><Link to={`/dashboard/apply/${postJob._id}`} className='bg-green-500 rounded-lg  mt-4 px-3 pb-1'>Apply For Job</Link></td>
                             </tr>
 
                             )
