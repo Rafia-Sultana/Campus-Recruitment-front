@@ -28,6 +28,7 @@ import HistoryOfAppliedJob from './Components/HistoryOfAppliedJob/HistoryOfAppli
 import MakeCV from './Components/FillEduForm/MakeCv';
 import CvForm from './Components/FillEduForm/CvForm';
 import CvInfo from './Components/FillEduForm/CvInfo';
+import ViewAllJob from './Components/ViewAllJob/ViewAllJob';
 
 
 
@@ -48,7 +49,7 @@ function App() {
             <Route path='viewvacancy' element={<ViewVacancy></ViewVacancy>}></Route>
             <Route path='history' element={<HistoryOfAppliedJob></HistoryOfAppliedJob>}></Route>
 
-            <Route path='apply/:id' element={<ApplyJob></ApplyJob>}> </Route>
+
             <Route path='fillEduForm' element={<FillEduForm></FillEduForm>}></Route>
             <Route path='cvform' element={<CvForm></CvForm>}></Route>
             <Route path='cvinfo' element={<CvInfo></CvInfo>}></Route>
@@ -58,7 +59,8 @@ function App() {
             <Route path='rejected' element={<Rejected></Rejected>}></Route>
             <Route path='all' element={<All></All>}></Route>
           </Route>
-
+          <Route path='apply/:id' element={<ApplyJob></ApplyJob>}> </Route>
+          <Route path='/viewalljobs' element={<ViewAllJob></ViewAllJob>}></Route>
           <Route path='/about' element={<About />}></Route>
           <Route path='/viewdetails' element={<JobDetails></JobDetails>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>

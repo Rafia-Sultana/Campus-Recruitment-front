@@ -1,0 +1,15 @@
+.bg {
+    margin-top: 25px;
+    background-color: rgba(49, 49, 49, .5);
+    padding: 50px;
+}
+
+.button:hover {
+
+    background-color: white;
+    color: rgb(236, 183, 9);
+    border: 2px solid rgb(236, 183, 9);
+}
+
+
+/* style={{ backgroundImage: `url("https://talentumph.com/wp-content/uploads/2020/09/jobs-list-banner.jpg")` }} */

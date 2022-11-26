@@ -6,10 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const ApplyJob = () => {
     const { id } = useParams()
-    console.log(id)
+    /* console.log(id) */
     const [postJobs, setPostJobs] = useState([])
-    const [applyJobs, setApplyJobs] = useState([])
-    console.log(postJobs);
 
     useEffect(() => {
         fetch(`http://localhost:5000/user/${id}`)
@@ -17,18 +15,18 @@ const ApplyJob = () => {
             .then(data => setPostJobs(data))
     }, [])
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/apply/${id}`)
-            .then(res => res.json())
-            .then(data => console.log("singleData.....", data))
-    }, [])
+    /*     useEffect(() => {
+            fetch(`http://localhost:5000/apply/${id}`)
+                .then(res => res.json())
+                .then(data => console.log("singleData.....", data))
+        }, []) */
 
     // useEffect(() => {
     //     console.log("postjobs......", postJobs);
     // }, [postJobs])
 
 
-    const stuInfo = {}
+
     const handleApply = (e) => {
         e.preventDefault()
         const name = e.target.name.value
@@ -53,12 +51,12 @@ const ApplyJob = () => {
 
     }
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/apply/${id}`)
-            .then(res => res.json())
-            .then(data => console.log("id............", data))
-    }, [])
-
+    /*     useEffect(() => {
+            fetch(`http://localhost:5000/apply/${id}`)
+                .then(res => res.json())
+                .then(data => console.log("id............", data))
+        }, [])
+     */
 
 
 

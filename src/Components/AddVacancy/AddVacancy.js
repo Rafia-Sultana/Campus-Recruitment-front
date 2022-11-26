@@ -8,15 +8,21 @@ const AddVacancy = () => {
 
   const handleJobPost = (e) => {
     e.preventDefault()
-    const description = e.target.description.value;
+    const jobResponsibilities = e.target.jobResponsibilities.value;
+    const educationalRequirements = e.target.educationalRequirements.value;
+    const employmentStatus = e.target.employmentStatus.value;
+    const workPlace = e.target.workPlace.value;
+    const experienceRequirements = e.target.experienceRequirements.value;
+    const additionalRequirements = e.target.additionalRequirements.value;
+    const otherBenefits = e.target.otherBenefits.value;
     const openings = e.target.openings.value
     const location = e.target.location.value
     const apply_date = e.target.apply_date.value
     const last_date = e.target.last_date.value
     const salary = e.target.salary.value
-    console.log(description, openings, location, apply_date, last_date, salary, jobTitle)
+    console.log(jobResponsibilities, employmentStatus, educationalRequirements, workPlace, experienceRequirements, additionalRequirements, otherBenefits, openings, location, apply_date, last_date, salary, jobTitle)
 
-    const user = { jobTitle, description, location, openings, apply_date, last_date, salary }
+    const user = { jobTitle, jobResponsibilities, employmentStatus, educationalRequirements, workPlace, experienceRequirements, additionalRequirements, otherBenefits, location, openings, apply_date, last_date, salary }
 
 
     fetch('http://localhost:5000/user', {
@@ -61,13 +67,55 @@ const AddVacancy = () => {
           <option >React Developer </option>
           <option>Javascript Developer</option>
           <option >Laravel Developer</option>
+          <option >Django Developer</option>
+          <option >Graphics Designer</option>
+          <option >Senior Full Stack developer</option>
+          <option >System Engineer</option>
+          <option >Senior SQA Engineer</option>
+          <option >Senior System &Cloud Engineer</option>
         </select>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Job Description</span>
+            <span className="label-text">Job Responsibilities</span>
           </label>
           <textarea
-            name='description'
+            name='jobResponsibilities'
+            className="textarea textarea-bordered h-8"></textarea>
+          <label className="label">
+            <span className="label-text">Educational Requirements</span>
+          </label>
+          <textarea
+            name='educationalRequirements'
+            className="textarea textarea-bordered h-8"></textarea>
+          <label className="label">
+            <span className="label-text">Employment Status</span>
+          </label>
+          <textarea
+            name='employmentStatus'
+            className="textarea textarea-bordered h-8"></textarea>
+          <label className="label">
+            <span className="label-text">Work Place</span>
+          </label>
+          <textarea
+            name='workPlace'
+            className="textarea textarea-bordered h-8"></textarea>
+          <label className="label">
+            <span className="label-text">Experience Requirements</span>
+          </label>
+          <textarea
+            name='experienceRequirements'
+            className="textarea textarea-bordered h-8"></textarea>
+          <label className="label">
+            <span className="label-text">Additional Requirements</span>
+          </label>
+          <textarea
+            name='additionalRequirements'
+            className="textarea textarea-bordered h-8"></textarea>
+          <label className="label">
+            <span className="label-text">Compansion & Other benefits</span>
+          </label>
+          <textarea
+            name='otherBenefits'
             className="textarea textarea-bordered h-8"></textarea>
 
           <label className="label">
