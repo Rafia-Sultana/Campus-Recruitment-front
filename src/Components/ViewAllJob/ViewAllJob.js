@@ -103,7 +103,7 @@ const ViewAllJob = () => {
                                         <h1 className='flex justify-start gap-3 text-lg '><RiUserSettingsFill className='mt-1' size={20} />full time</h1>
                                     </div>
                                     <div className="flex gap-8">
-                                        <Link to='/viewdetails'>
+                                        <Link to={`/viewdetails/${job._id}`}>
                                             <div>
                                                 <button className='btn btn-warning rounded-full px-8'>Full details</button>
                                             </div>

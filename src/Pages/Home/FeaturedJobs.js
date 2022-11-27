@@ -45,7 +45,7 @@ const FeaturedJobs = () => {
                   <p className='ml-2'>
                     Full Time</p>
                 </div>
-                <Link to='/viewdetails'>
+                <Link to={`/viewdetails/${postJob._id}`} >
                   <div className="card-actions justify-center">
 
                     <button className="btn btn-warning w-9/12">View Details</button>

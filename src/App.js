@@ -62,7 +62,7 @@ function App() {
           <Route path='apply/:id' element={<ApplyJob></ApplyJob>}> </Route>
           <Route path='/viewalljobs' element={<ViewAllJob></ViewAllJob>}></Route>
           <Route path='/about' element={<About />}></Route>
-          <Route path='/viewdetails' element={<JobDetails></JobDetails>}></Route>
+          <Route path='/viewdetails/:id' element={<JobDetails></JobDetails>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/signup' element={<SignUp></SignUp>}></Route>
           <Route path='*' element={<Notfound></Notfound>}></Route>
