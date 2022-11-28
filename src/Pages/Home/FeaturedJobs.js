@@ -25,7 +25,7 @@ const FeaturedJobs = () => {
       <Fade bottom>
         <div className="flex">
           {
-            firstThree.map((postJob, index) => <div className="card card-compact w-96 bg-base-100 shadow-xl mx-20 mb-14 ">
+            firstThree.map((postJob) => <div key={postJob._id} className="card card-compact w-96 bg-base-100 shadow-xl mx-20 mb-14 ">
               <figure><img src={featuredGirl} alt="" /></figure>
               <div className="card-body justify-center ">
                 <h1 className="card-title">

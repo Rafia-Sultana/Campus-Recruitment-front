@@ -31,7 +31,7 @@ const TotalVacancy = () => {
           <tbody>
 
             {
-              postJobs.map(postJob => <tr>
+              postJobs.map((postJob, index) => <tr key={index}>
                 <td></td>
                 <td>{postJob.jobTitle}</td>
                 <td>{postJob.location}</td>

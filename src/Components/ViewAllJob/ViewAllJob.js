@@ -87,7 +87,7 @@ const ViewAllJob = () => {
 
             {
                 filterJobs.map((job, index) =>
-                    <div className="flex justify-center m-16">
+                    <div key={index} className="flex justify-center m-16">
 
                         <div className="card w-full bg-base-100 shadow-xl m-10 ">
                             <div className="card-body">

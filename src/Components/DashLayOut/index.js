@@ -33,7 +33,21 @@ export function DashLayOut() {
 <li className=" mt-5 mb-4" >Change Password</li>
 <li className=" mt-5 mb-4" >LogOut</li> */}
 
-                        <Link to='/dashboard/fillEduForm' className=" mt-5 mb-4">Fill Education Form </Link>
+
+
+                        <div className="collapse">
+                            <input type="checkbox" />
+                            <div className="collapse-title  font-medium">
+                                Manage Resume
+                            </div>
+                            <div className="collapse-content">
+                                <Link to='/dashboard/fillEduForm' className=" ">View Resume  </Link>
+                                <p>Edit Resume/CV</p>
+                                <p>Personalized Resume</p>
+                                <p>Email Resume</p>
+                            </div>
+                        </div>
+
                         <Link to='/dashboard/sortlisted' className=" ">Sort Listed Application </Link>
                         <Link to='/dashboard/viewvacancy' className=" ">View Vacancy</Link>
                         <Link to='/dashboard/history' className=" ">History of applied job</Link>

@@ -35,7 +35,7 @@ const MakeCV = () => {
 
                     {
 
-                        cv.map(c => <div className='mx-32'>
+                        cv.map((c, index) => <div key={index} className='mx-32'>
                             <div className='text-xl text-center'>
                                 <h1 className='font-bold '>{c.name}</h1>
                                 <h3 className='font-semibold'>{c.title}</h3>

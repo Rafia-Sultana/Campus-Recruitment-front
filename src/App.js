@@ -29,6 +29,9 @@ import MakeCV from './Components/FillEduForm/MakeCv';
 import CvForm from './Components/FillEduForm/CvForm';
 import CvInfo from './Components/FillEduForm/CvInfo';
 import ViewAllJob from './Components/ViewAllJob/ViewAllJob';
+import PersonalDetails from './Components/PersonalDetails/PersonalDetails';
+import AcademicDetails from './Components/AcademicDetails/AcademicDetails';
+import EmploymentHistory from './Components/EmploymentHistory/EmploymentHistory';
 
 
 
@@ -38,6 +41,7 @@ function App() {
       <Header></Header>
       <div>
         {/* <BrowserRouter> */}
+
         <Routes>
           <Route path='/' element={<Home></Home>} />
           <Route path='/dashboard' element={<DashLayOut />}>
@@ -51,6 +55,9 @@ function App() {
 
 
             <Route path='fillEduForm' element={<FillEduForm></FillEduForm>}></Route>
+            <Route path='personaldetails' element={<PersonalDetails></PersonalDetails>}></Route>
+            <Route path='academicdetails' element={<AcademicDetails></AcademicDetails>}></Route>
+            <Route path='employmenthistory' element={<EmploymentHistory></EmploymentHistory>}></Route>
             <Route path='cvform' element={<CvForm></CvForm>}></Route>
             <Route path='cvinfo' element={<CvInfo></CvInfo>}></Route>
             <Route path='addVacancy' element={<AddVacancy></AddVacancy>}></Route>
