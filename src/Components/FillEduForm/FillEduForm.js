@@ -50,7 +50,12 @@ const FillEduForm = () => {
                 </ul>
             </div>
 
-            <PersonalDetails></PersonalDetails>
+
+
+
+
+
+
 
 
         </div>

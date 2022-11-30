@@ -32,6 +32,7 @@ import ViewAllJob from './Components/ViewAllJob/ViewAllJob';
 import PersonalDetails from './Components/PersonalDetails/PersonalDetails';
 import AcademicDetails from './Components/AcademicDetails/AcademicDetails';
 import EmploymentHistory from './Components/EmploymentHistory/EmploymentHistory';
+import ViewResume from './Components/ViewResume/ViewResume';
 
 
 
@@ -54,12 +55,13 @@ function App() {
             <Route path='history' element={<HistoryOfAppliedJob></HistoryOfAppliedJob>}></Route>
 
 
-            <Route path='fillEduForm' element={<FillEduForm></FillEduForm>}></Route>
+            <Route path='fillEduForm' element={<FillEduForm></FillEduForm>}>  </Route>
             <Route path='personaldetails' element={<PersonalDetails></PersonalDetails>}></Route>
             <Route path='academicdetails' element={<AcademicDetails></AcademicDetails>}></Route>
             <Route path='employmenthistory' element={<EmploymentHistory></EmploymentHistory>}></Route>
-            <Route path='cvform' element={<CvForm></CvForm>}></Route>
-            <Route path='cvinfo' element={<CvInfo></CvInfo>}></Route>
+            <Route path='viewresume' element={<ViewResume></ViewResume>}></Route>
+            {            /* <Route path='cvform' element={<CvForm></CvForm>}></Route>
+            <Route path='cvinfo' element={<CvInfo></CvInfo>}></Route> */}
             <Route path='addVacancy' element={<AddVacancy></AddVacancy>}></Route>
             <Route path='new' element={<NewApplication></NewApplication>}></Route>
             <Route path='sortlisted' element={<SortListed></SortListed>}></Route>

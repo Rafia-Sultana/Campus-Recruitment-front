@@ -41,8 +41,9 @@ export function DashLayOut() {
                                 Manage Resume
                             </div>
                             <div className="collapse-content">
-                                <Link to='/dashboard/fillEduForm' className=" ">View Resume  </Link>
-                                <p>Edit Resume/CV</p>
+                                <Link to='/dashboard/fillEduForm' className="mb-2 ">Edit Resume/CV </Link> <br />
+                                <Link to='/dashboard/viewresume' className=" ">View Resume </Link>
+
                                 <p>Personalized Resume</p>
                                 <p>Email Resume</p>
                             </div>
