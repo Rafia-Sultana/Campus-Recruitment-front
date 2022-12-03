@@ -26,7 +26,7 @@ const Header = () => {
                     :
                     <>
                         <NavLink to='/login' >CANDIDATE</NavLink>
-                        <NavLink to='' >EMPLOYEE</NavLink>
+                        <NavLink to='/employesignup' >EMPLOYEE</NavLink>
                         <NavLink to='' >ADMIN</NavLink>
                     </>
                 }

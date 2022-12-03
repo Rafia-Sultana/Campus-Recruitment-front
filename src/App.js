@@ -33,6 +33,7 @@ import PersonalDetails from './Components/PersonalDetails/PersonalDetails';
 import AcademicDetails from './Components/AcademicDetails/AcademicDetails';
 import EmploymentHistory from './Components/EmploymentHistory/EmploymentHistory';
 import ViewResume from './Components/ViewResume/ViewResume';
+import EmployeSignUp from './Pages/EmployeLogin/EmployeSignUp';
 
 
 
@@ -74,6 +75,7 @@ function App() {
           <Route path='/viewdetails/:id' element={<JobDetails></JobDetails>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/signup' element={<SignUp></SignUp>}></Route>
+          <Route path='/employesignup' element={<EmployeSignUp></EmployeSignUp>}></Route>
           <Route path='*' element={<Notfound></Notfound>}></Route>
         </Routes>
         {/* </BrowserRouter> */}
