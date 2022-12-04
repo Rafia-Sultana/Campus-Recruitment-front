@@ -4,6 +4,7 @@ import SocialMedia from './SocialMedia'
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../../Components/Loading/Loading';
+import { useEffect } from 'react';
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -21,7 +22,31 @@ const SignUp = () => {
         const password = e.target.password.value;
         await createUserWithEmailAndPassword(email, password)
         await updateProfile({ displayName: name })
+        await handleCandidate(email, name)
     }
+    const handleCandidate = (email, name) => {
+        const url = 'http://localhost:5000/candidates'
+        const role = 'candidate'
+        const candidateInfo = { email, name, role }
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(candidateInfo),
+        })
+            .then(res => res.json())
+            .then(data => {
+
+                console.log(data)
+            })
+    }
+
+
+
+
+
     if (user) {
         navigate('/');
     }

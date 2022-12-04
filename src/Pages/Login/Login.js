@@ -60,7 +60,11 @@ const Login = () => {
 
                         <input className='btn btn-primary w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
-                    <p><small>New to Here? <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
+                    <p>
+                        <small>New to Here?
+                            <Link className='text-primary' to="/signup">Create New Account</Link>
+                        </small>
+                    </p>
                     <div className="divider">OR</div>
                     <SocialMedia></SocialMedia>
 
