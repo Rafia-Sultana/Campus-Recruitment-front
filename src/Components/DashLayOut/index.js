@@ -5,31 +5,31 @@ import { Link, Outlet } from 'react-router-dom'
 import auth from '../../firebase.init';
 
 export function DashLayOut() {
-    const [email] = useAuthState(auth);
-    const [isAdmin, setIsAdmin] = useState([])
+    const [user] = useAuthState(auth);
+    const [isCandidate, setIsCandidate] = useState([])
 
-    console.log(email?.email)
-    const url = `http://localhost:5000/candidates/${email?.email}`;
+    console.log(user?.email)
+    const url = `http://localhost:5000/candidates/${user?.email}`;
     useEffect(() => {
-        fetch(url).then(res => res.json()).then(data => setIsAdmin(data[1]))
+        fetch(url).then(res => res.json()).then(data => setIsCandidate(data[1]))
     }, [url])
-    console.log(isAdmin)
+    console.log(setIsCandidate)
     return (
         <div>
             <div className="drawer drawer-mobile z-10 boxShadow">
                 <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content p-12">
+                <div className="drawer-content ">
 
                     <Outlet />
 
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-5 overflow-y-auto w-60 bg-yellow-600 text-base-100 font-semibold">
+                    <ul className="menu  overflow-y-auto w-3/6 font-semibold">
 
 
 
-                        {!isAdmin ?
+                        {user?.email && isCandidate ?
                             <>
                                 <div className="collapse">
                                     <input type="checkbox" />

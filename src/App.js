@@ -34,6 +34,8 @@ import AcademicDetails from './Components/AcademicDetails/AcademicDetails';
 import EmploymentHistory from './Components/EmploymentHistory/EmploymentHistory';
 import ViewResume from './Components/ViewResume/ViewResume';
 import EmployeSignUp from './Pages/EmployeLogin/EmployeSignUp';
+import EmployeLogin from './Pages/EmployeLogin/EmployeLogin';
+import AdminLogin from './Pages/AdminLogin/AdminLogin';
 
 
 
@@ -77,6 +79,8 @@ function App() {
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/signup' element={<SignUp></SignUp>}></Route>
           <Route path='/employesignup' element={<EmployeSignUp></EmployeSignUp>}></Route>
+          <Route path='/employelogin' element={<EmployeLogin></EmployeLogin>}></Route>
+          <Route path='/adminlogin' element={<AdminLogin></AdminLogin>}></Route>
           <Route path='*' element={<Notfound></Notfound>}></Route>
         </Routes>
         {/* </BrowserRouter> */}

@@ -29,11 +29,12 @@ const Login = () => {
 
     return (
         <div className='flex min-h-[80vh] justify-center items-center'>
-            <div className="card w-96 bg-base-100 shadow-xl">
-                <div className="card-body">
+            <div className="font-bold text-4xl mr-5 w-2/6">Step forward to an Employability Test and Stand out <a href='' className="underline decoration-indigo-500 underline-offset-4 ">exceptionally</a>    among thousands of job candidates</div>
+            <div className="card w-2/6 bg-base-100 shadow-xl my-10">
+                <div className="card-body ">
                     <h2 className="text-center text-2xl font-bold">Login</h2>
                     <form onSubmit={handleLogIn}>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-96">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
@@ -45,7 +46,7 @@ const Login = () => {
                             />
 
                         </div>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-5/6">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
@@ -61,8 +62,8 @@ const Login = () => {
                         <input className='btn btn-primary w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
                     <p>
-                        <small>New to Here?
-                            <Link className='text-primary' to="/signup">Create New Account</Link>
+                        <small className='ml-3 '>New to Here?
+                            <Link className='text-primary ml-3' to="/signup" >Create New Account</Link>
                         </small>
                     </p>
                     <div className="divider">OR</div>

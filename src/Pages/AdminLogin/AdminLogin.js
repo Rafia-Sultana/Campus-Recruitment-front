@@ -1,20 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const EmployeLogin = () => {
-    const handleEmployeeLogIn = () => {
+const AdminLogin = () => {
+    const handleAdminLogIn = () => {
 
     }
-
-
     return (
         <div>
             <div className='flex min-h-[80vh] justify-center items-center'>
-                <div className="font-bold text-4xl mr-5 w-2/6">The quickest approach to <a href='' className="underline decoration-indigo-500 underline-offset-4 ">find</a>  the greatest prospects...</div>
+
                 <div className="card w-2/6 bg-base-100 shadow-xl my-10">
                     <div className="card-body ">
-                        <h2 className="text-center text-2xl font-bold">Sign In</h2>
-                        <form onSubmit={handleEmployeeLogIn}>
+                        <h2 className="text-center text-2xl font-bold">ADMIN</h2>
+                        <form onSubmit={handleAdminLogIn}>
                             <div className="form-control w-96">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -40,13 +37,12 @@ const EmployeLogin = () => {
                                 <br></br>
                             </div>
 
-                            <input className='btn btn-primary w-full max-w-xs text-white' type="submit" value="Login" />
+                            <input
+                                className='btn btn-primary w-full max-w-xs text-white'
+                                type="submit"
+                                value="Submit" />
                         </form>
-                        <p>
-                            <small className='ml-3 '>New to Here?
-                                <Link className='text-primary ml-3' to="/employesignup" >Create New Account</Link>
-                            </small>
-                        </p>
+
 
 
                     </div>
@@ -56,4 +52,4 @@ const EmployeLogin = () => {
     );
 };
 
-export default EmployeLogin;
+export default AdminLogin;

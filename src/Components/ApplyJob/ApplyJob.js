@@ -65,8 +65,26 @@ const ApplyJob = () => {
     return (
         <div className='border-dashed border-2  border-amber-600'>
 
+            {/* The button to open modal */}
+            <label htmlFor="my-modal-3" className="btn">open modal</label>
 
-            <div className="">
+            {/* Put this part before </body> tag */}
+            <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box relative">
+                    <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <h1>For the position of </h1>
+                    <h3 className="text-lg font-bold"> {postJobs?.jobTitle}</h3>
+                    <p className="py-4">Apply</p>
+                </div>
+            </div>
+
+
+
+
+
+
+            {  /* <div className="">
                 <div className="hero min-h-screen" style={{ backgroundImage: `url("https://talentumph.com/wp-content/uploads/2021/06/nastuh-abootalebi-J1rNS2qv8BQ-unsplash.jpg")` }}>
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content">
@@ -117,7 +135,7 @@ const ApplyJob = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
 

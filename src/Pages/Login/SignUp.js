@@ -7,6 +7,7 @@ import Loading from '../../Components/Loading/Loading';
 import { useEffect } from 'react';
 
 const SignUp = () => {
+
     const navigate = useNavigate();
     const [
         createUserWithEmailAndPassword,
@@ -60,12 +61,13 @@ const SignUp = () => {
 
     return (
         <div className='flex min-h-[80vh] justify-center items-center'>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="font-bold text-4xl mr-5 w-2/6">Search, View, Apply to any jobs from anywhere!!</div>
+            <div className="card w-2/6 bg-base-100 shadow-xl my-10">
                 <div className="card-body">
-                    <h2 className="text-center text-2xl font-bold">SignUp</h2>
+                    <h2 className="text-center text-2xl font-bold">Candidate Register</h2>
                     <form onSubmit={handleSignUp}>
 
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-5/6">
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
@@ -77,7 +79,7 @@ const SignUp = () => {
                             />
 
                         </div>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-5/6">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
