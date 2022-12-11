@@ -31,7 +31,7 @@ const EmployeSignUp = () => {
         await createUserWithEmailAndPassword(email, password)
         await updateProfile({ displayName: username })
 
-        const userInfo = { username, email, confirmpassword, companyname, publishyear, companyaddress, url, contactname, contactemail, contactmobile, contactdesignation }
+        const userInfo = { username, email, confirmpassword, companyname, publishyear, companyaddress, url, contactname, contactemail, contactmobile, contactdesignation, country, district }
         await handleEmployee(userInfo)
 
 
@@ -39,7 +39,7 @@ const EmployeSignUp = () => {
     }
 
     const handleEmployee = (userInfo) => {
-        const url = 'http://localhost:5000/employee'
+        const url = 'http://localhost:5000/candidates'
         const role = 'employee'
         const employeeInfo = { ...userInfo, role }
         console.log(employeeInfo);

@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import 'react-toastify/dist/ReactToastify.css';
 const AcademicDetails = () => {
+    const [user] = useAuthState(auth);
     const [result, setResult] = useState("")
     const [year, setYear] = useState("")
 
@@ -9,7 +12,7 @@ const AcademicDetails = () => {
     // academic fetching
     const [academic, setAcademic] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/academic`)
+        fetch(`http://localhost:5000/academic/${user?.uid}`)
             .then(res => res.json())
             .then(
                 data => {
@@ -17,14 +20,14 @@ const AcademicDetails = () => {
                     setAcademic(data)
                 }
             )
-    }, [academic])
+    }, [])
 
 
 
     // training fetching
     const [training, setTraining] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/training`)
+        fetch(`http://localhost:5000/training/${user?.uid}`)
             .then(res => res.json())
             .then(
                 data => {
@@ -32,7 +35,7 @@ const AcademicDetails = () => {
                     setTraining(data)
                 }
             )
-    }, [training])
+    }, [])
 
 
 
@@ -40,14 +43,15 @@ const AcademicDetails = () => {
 
     const handleAcademicDetails = (e) => {
         e.preventDefault()
+        const uid = e.target.uid.value;
         const levelofeducation = e.target.levelofeducation.value;
         const degreetitle = e.target.degreetitle.value;
         const majorgroup = e.target.majorgroup.value;
         const instituename = e.target.instituename.value;
         const scale = e.target.scale.value;
         const cgpa = e.target.cgpa.value;
-        {   /* console.log(levelofeducation, degreetitle, majorgroup, instituename, year, scale, cgpa, result) */ }
-        const academic = { levelofeducation, degreetitle, majorgroup, instituename, year, scale, cgpa, result }
+
+        const academic = { uid, levelofeducation, degreetitle, majorgroup, instituename, year, scale, cgpa, result }
 
         //POST academic details
         fetch('http://localhost:5000/academic', {
@@ -82,14 +86,14 @@ const AcademicDetails = () => {
 
     const handleTraingingSummary = (e) => {
         e.preventDefault()
+        const uid = e.target.uid.value;
         const trainingtitle = e.target.trainingtitle.value;
         const instituenametraing = e.target.instituenametraing.value;
         const location = e.target.location.value;
         const duration = e.target.duration.value;
         const country = e.target.country.value;
-
-        console.log(country, location, trainingtitle, year, instituenametraing, duration)
-        const training = { country, location, trainingtitle, year, instituenametraing, duration }
+        console.log(uid, country, location, trainingtitle, year, instituenametraing, duration)
+        const training = { uid, country, location, trainingtitle, year, instituenametraing, duration }
 
         //POST Training Summary
         fetch('http://localhost:5000/training', {
@@ -145,6 +149,15 @@ const AcademicDetails = () => {
                                                 placeholder="Exam/Degree Title"
                                                 className="input input-bordered "
 
+                                            />
+                                            <input
+                                                name='uid'
+                                                type="text"
+                                                value={user?.uid}
+                                                hidden
+                                                placeholder="uid"
+                                                className="input input-bordered w-full max-w-xs"
+                                                required
                                             />
 
                                         </div>
@@ -462,6 +475,15 @@ const AcademicDetails = () => {
                                                 className="input input-bordered"
                                             />
 
+                                            <input
+                                                name='uid'
+                                                type="text"
+                                                value={user?.uid}
+                                                hidden
+                                                placeholder="uid"
+                                                className="input input-bordered w-full max-w-xs"
+                                                required
+                                            />
                                         </div>
 
                                         <div className="form-control ">
@@ -547,12 +569,9 @@ const AcademicDetails = () => {
                                             className="input input-bordered w-1/2 my-3"
                                         />
 
+
+
                                     </div>
-
-
-
-
-
                                 </div>
 
 
@@ -564,7 +583,7 @@ const AcademicDetails = () => {
                                 {
                                     training.map((t, index) =>
 
-                                        <form onSubmit={handleTraingingSummary}>
+                                        <form >
                                             <div className=''>
                                                 <div className="grid grid-cols-2 gap-4 my-3">
                                                     <div className="form-control ">

@@ -2,8 +2,10 @@ import React from 'react';
 import './ViewResume.css'
 import { useEffect, useState, useRef } from 'react';
 import { useReactToPrint } from 'react-to-print'
-
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 const ViewResume = () => {
+    const [user] = useAuthState(auth);
     //pdf printing
     const ComponentRef = useRef();
     const handlePrint = useReactToPrint({
@@ -15,7 +17,7 @@ const ViewResume = () => {
 
     const [personal, setPersonal] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/personal`)
+        fetch(`http://localhost:5000/personal/${user?.uid}`)
             .then(res => res.json())
             .then(
                 data => {
@@ -27,7 +29,7 @@ const ViewResume = () => {
     //address fetching
     const [address, SetAddress] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/address`)
+        fetch(`http://localhost:5000/address/${user?.uid}`)
             .then(res => res.json())
             .then(
                 data => {
@@ -41,7 +43,7 @@ const ViewResume = () => {
     // employmenthistory fetching 
     const [employmenthistory, setEmploymenthistory] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/employmenthistory`)
+        fetch(`http://localhost:5000/employmenthistory/${user?.uid}`)
             .then(res => res.json())
             .then(
                 data => {
@@ -58,7 +60,7 @@ const ViewResume = () => {
     // academic fetching
     const [academic, setAcademic] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/academic`)
+        fetch(`http://localhost:5000/academic/${user?.uid}`)
             .then(res => res.json())
             .then(
                 data => {
@@ -71,7 +73,7 @@ const ViewResume = () => {
     // training fetching
     const [training, setTraining] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/training`)
+        fetch(`http://localhost:5000/training/${user?.uid}`)
             .then(res => res.json())
             .then(
                 data => {

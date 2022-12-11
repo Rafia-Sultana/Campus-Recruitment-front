@@ -9,7 +9,6 @@ import { signOut } from 'firebase/auth';
 
 const Header = () => {
     const [user] = useAuthState(auth);
-    console.log(user);
     return (
         <div className='header-container'>
             <div className='logoBox'>
@@ -21,7 +20,8 @@ const Header = () => {
                 <NavLink to='/about' >ABOUT </NavLink>
                 {user ?
                     <>
-                        <NavLink to=''>{user?.displayName ? user?.displayName : 'CANDIDATE'} </NavLink>
+
+                        <NavLink to=''>{user?.displayName ? user?.displayName : ''} </NavLink>
                         <NavLink onClick={() => signOut(auth)} to='/login'>SIGN OUT</NavLink>
                     </>
                     :

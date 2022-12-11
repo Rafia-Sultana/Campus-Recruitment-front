@@ -36,6 +36,8 @@ import ViewResume from './Components/ViewResume/ViewResume';
 import EmployeSignUp from './Pages/EmployeLogin/EmployeSignUp';
 import EmployeLogin from './Pages/EmployeLogin/EmployeLogin';
 import AdminLogin from './Pages/AdminLogin/AdminLogin';
+import ViewAllCV from './Components/ViewAllCV/ViewAllCV';
+import SingleCv from './Components/SingleCv/SingleCv';
 
 
 
@@ -60,9 +62,9 @@ function App() {
 
 
             <Route path='fillEduForm' element={<FillEduForm></FillEduForm>}>  </Route>
-            <Route path='personaldetails' element={<PersonalDetails></PersonalDetails>}></Route>
+            {          /*  <Route path='personaldetails' element={<PersonalDetails></PersonalDetails>}></Route>
             <Route path='academicdetails' element={<AcademicDetails></AcademicDetails>}></Route>
-            <Route path='employmenthistory' element={<EmploymentHistory></EmploymentHistory>}></Route>
+            <Route path='employmenthistory' element={<EmploymentHistory></EmploymentHistory>}></Route> */}
             <Route path='viewresume' element={<ViewResume></ViewResume>}></Route>
             {            /* <Route path='cvform' element={<CvForm></CvForm>}></Route>
             <Route path='cvinfo' element={<CvInfo></CvInfo>}></Route> */}
@@ -73,6 +75,7 @@ function App() {
             <Route path='all' element={<All></All>}></Route>
           </Route>
           <Route path='apply/:id' element={<ApplyJob></ApplyJob>}> </Route>
+          <Route path='viewcv/:id' element={<ViewAllCV></ViewAllCV>}> </Route>
           <Route path='/viewalljobs' element={<ViewAllJob></ViewAllJob>}></Route>
           <Route path='/about' element={<About />}></Route>
           <Route path='/viewdetails/:id' element={<JobDetails></JobDetails>}></Route>

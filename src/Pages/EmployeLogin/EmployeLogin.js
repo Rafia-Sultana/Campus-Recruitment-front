@@ -1,12 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import Loading from '../../Components/Loading/Loading';
 const EmployeLogin = () => {
-    const handleEmployeeLogIn = () => {
-
+    const navigate = useNavigate();
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+    const handleEmployeeLogIn = (e) => {
+        e.preventDefault()
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        signInWithEmailAndPassword(email, password)
     }
 
-
+    if (user) {
+        navigate('/')
+    }
+    if (loading) {
+        return <Loading />
+    }
     return (
         <div>
             <div className='flex min-h-[80vh] justify-center items-center'>

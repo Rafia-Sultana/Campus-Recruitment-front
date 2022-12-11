@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 const EmploymentHistory = () => {
-
+    const [user] = useAuthState(auth);
 
     {/* employmenthistory fetching */ }
     const [employmenthistory, setEmploymenthistory] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/employmenthistory`)
+        fetch(`http://localhost:5000/employmenthistory/${user?.uid}`)
             .then(res => res.json())
             .then(
                 data => {
@@ -15,12 +17,13 @@ const EmploymentHistory = () => {
                     setEmploymenthistory(data)
                 }
             )
-    }, [employmenthistory])
+    }, [])
 
 
 
     const handleCompanyDetails = (e) => {
         e.preventDefault()
+        const uid = e.target.uid.value;
         const companyname = e.target.companyname.value;
         const companybuisness = e.target.companybuisness.value;
         const designation = e.target.designation.value;
@@ -29,7 +32,7 @@ const EmploymentHistory = () => {
         const period = e.target.period.value;
         const companylocation = e.target.companylocation.value;
         console.log(companyname, companybuisness, companylocation, designation, responsibilities, department, period);
-        const employmentHistoryDetails = { companyname, companybuisness, companylocation, designation, responsibilities, department, period }
+        const employmentHistoryDetails = { uid, companyname, companybuisness, companylocation, designation, responsibilities, department, period }
 
 
 
@@ -44,7 +47,7 @@ const EmploymentHistory = () => {
             .then(data => {
                 console.log(data)
                 toast("Succesfully Employment History Details added!")
-                e.target.reset();
+                {  /* e.target.reset(); */ }
             })
 
     }
@@ -58,7 +61,7 @@ const EmploymentHistory = () => {
                 <div className="collapse-content text-black text-primary-content ">
 
                     {
-                        employmenthistory.length > 1 ?
+                        employmenthistory.length < 1 ?
                             <form onSubmit={handleCompanyDetails}>
                                 <div className=''>
                                     <div className="grid grid-cols-2 gap-4 my-3">
@@ -145,6 +148,15 @@ const EmploymentHistory = () => {
                                             type="text"
                                             placeholder="Company Location"
                                             className="input input-bordered my-3"
+                                            required
+                                        />
+                                        <input
+                                            name='uid'
+                                            type="text"
+                                            value={user?.uid}
+                                            hidden
+                                            placeholder="uid"
+                                            className="input input-bordered w-full max-w-xs"
                                             required
                                         />
 

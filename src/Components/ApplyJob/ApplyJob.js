@@ -63,20 +63,19 @@ const ApplyJob = () => {
     // const data = postJobs.find(job => job.email === stuInfo.email)
     // console.log("find...........", data)
     return (
-        <div className='border-dashed border-2  border-amber-600'>
+        <div className='flex justify-center items-center my-36'>
 
-            {/* The button to open modal */}
-            <label htmlFor="my-modal-3" className="btn">open modal</label>
-
-            {/* Put this part before </body> tag */}
-            <input type="checkbox" id="my-modal-3" className="modal-toggle" />
-            <div className="modal">
-                <div className="modal-box relative">
-                    <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h1>For the position of </h1>
-                    <h3 className="text-lg font-bold"> {postJobs?.jobTitle}</h3>
-                    <p className="py-4">Apply</p>
+            <div className="min-h-screen">
+                <div className="card  w-96 bg-base-100 shadow-xl">
+                    <div className="card-body">
+                        <h2 className="card-title text-center">Good Job!</h2>
+                        <p>You are applying for the position of  <span className='font-bold'>{postJobs?.jobTitle}!!</span> </p>
+                        <div className="card-actions justify-end">
+                            <button className="btn btn-primary">Apply</button>
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
 

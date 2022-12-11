@@ -6,30 +6,28 @@ import auth from '../../firebase.init';
 
 export function DashLayOut() {
     const [user] = useAuthState(auth);
-    const [isCandidate, setIsCandidate] = useState([])
+    const [candidate, setCandidate] = useState([])
 
-    console.log(user?.email)
     const url = `http://localhost:5000/candidates/${user?.email}`;
     useEffect(() => {
-        fetch(url).then(res => res.json()).then(data => setIsCandidate(data[1]))
+        fetch(url).then(res => res.json()).then(data => setCandidate(data[0]))
     }, [url])
-    console.log(setIsCandidate)
     return (
         <div>
             <div className="drawer drawer-mobile z-10 boxShadow">
                 <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content ">
+                <div className="drawer-content p-12">
 
                     <Outlet />
 
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
-                    <ul className="menu  overflow-y-auto w-3/6 font-semibold">
+                    <ul className="menu p-4 overflow-y-auto w-60 bg-amber-400 text-base-100">
 
 
 
-                        {user?.email && isCandidate ?
+                        {user?.email && candidate?.role === "candidate" &&
                             <>
                                 <div className="collapse">
                                     <input type="checkbox" />
@@ -37,11 +35,12 @@ export function DashLayOut() {
                                         Manage Resume
                                     </div>
                                     <div className="collapse-content">
-                                        <Link to='/dashboard/fillEduForm' className="mb-2 ">Edit Resume/CV </Link> <br />
-                                        <Link to='/dashboard/viewresume' className=" ">View Resume </Link>
 
-                                        <p>Personalized Resume</p>
-                                        <p>Email Resume</p>
+                                        <Link to='/dashboard/fillEduForm' className="mb-2 ">Edit CV </Link> <br />
+                                        <Link to='/dashboard/viewresume' className=" ">View CV </Link>
+
+                                        { /* <p>Personalized Resume</p>
+                                        <p>Email Resume</p> */}
                                     </div>
                                 </div>
 
@@ -50,14 +49,16 @@ export function DashLayOut() {
                                 <Link to='/dashboard/history' className=" ">History of applied job</Link>
 
                             </>
-
-
-                            :
+                        }
+                        {user?.email && candidate?.role === "admin" &&
                             <>
                                 <Link to='/dashboard/registeredCompany' className=" mt-10 mb-4">Total Registered Company  </Link>
                                 <Link to='/dashboard/registeredCandidate' className=" mt-5 mb-4" >Total Registered Candidate  </Link>
                                 <Link to='/dashboard/totalVacancy' className=" mt-5 mb-4">Total Vacancy  </Link>
-
+                            </>
+                        }
+                        {user?.email && candidate?.role === "employee" &&
+                            <>
                                 <div className="collapse">
                                     <input type="checkbox" />
                                     <div className="collapse-title  font-medium">

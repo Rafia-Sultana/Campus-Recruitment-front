@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+
 const PersonalDetails = () => {
 
+    const [user] = useAuthState(auth);
     //personal fetching 
     const [personal, setPersonal] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/personal`)
+        fetch(`http://localhost:5000/personal/${user?.uid}`)
             .then(res => res.json())
             .then(
                 data => {
@@ -14,12 +18,13 @@ const PersonalDetails = () => {
                     setPersonal(data)
                 }
             )
-    }, [personal])
+    }, [])
 
     //address fetching
     const [address, SetAddress] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/address`)
+
+        fetch(`http://localhost:5000/address/${user?.uid}`)
             .then(res => res.json())
             .then(
                 data => {
@@ -27,11 +32,11 @@ const PersonalDetails = () => {
                     SetAddress(data)
                 }
             )
-    }, [address])
+    }, [])
     //career fetching
     const [career, SetCareer] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/career`)
+        fetch(`http://localhost:5000/career/${user?.uid}`)
             .then(res => res.json())
             .then(
                 data => {
@@ -39,7 +44,7 @@ const PersonalDetails = () => {
                     SetCareer(data)
                 }
             )
-    }, [career])
+    }, [])
 
 
 
@@ -48,6 +53,7 @@ const PersonalDetails = () => {
     const [bloodGroup, setBloodGroup] = useState("")
     const handleSubmit = (e) => {
         e.preventDefault()
+        const uid = e.target.uid.value;
         const name = e.target.name.value;
         const fathername = e.target.fathername.value;
         const mothername = e.target.mothername.value;
@@ -58,7 +64,7 @@ const PersonalDetails = () => {
         const mbl_num = e.target.mbl_num.value;
 
         console.log(name, gender, fathername, mothername, dob, gender, religion, nationality, mbl_num, bloodGroup)
-        const personal = { name, mothername, fathername, dob, gender, religion, nationality, mbl_num, bloodGroup }
+        const personal = { uid, name, mothername, fathername, dob, gender, religion, nationality, mbl_num, bloodGroup }
 
         //POST personal details
         fetch('http://localhost:5000/personal', {
@@ -83,14 +89,20 @@ const PersonalDetails = () => {
         setBloodGroup(value);
 
     }
+
+
     const handleAddressDetails = (e) => {
         e.preventDefault()
+
+
+        const uid = e.target.uid.value;
+        console.log(uid);
         const district = e.target.district.value;
         const thana = e.target.thana.value;
         const postOffice = e.target.postOffice.value;
         const house = e.target.house.value;
-        console.log(district, thana, postOffice, house);
-        const address = { district, thana, postOffice, house }
+
+        const address = { district, thana, postOffice, house, uid }
 
         //POST address details
         fetch('http://localhost:5000/address', {
@@ -110,11 +122,13 @@ const PersonalDetails = () => {
     }
     const handleCareerDetails = (e) => {
         e.preventDefault()
+        const uid = e.target.uid.value;
+        console.log(uid);
         const objective = e.target.objective.value;
         const expectedsalary = e.target.expectedsalary.value;
         const jobnature = e.target.jobnature.value;
         /*  console.log(objective, expectedsalary, jobnature); */
-        const career = { objective, expectedsalary, jobnature }
+        const career = { uid, objective, expectedsalary, jobnature }
 
         //POST career details
         fetch('http://localhost:5000/career', {
@@ -156,6 +170,15 @@ const PersonalDetails = () => {
                                     name='name'
                                     type="text"
                                     placeholder=""
+                                    className="input input-bordered w-full max-w-xs"
+                                    required
+                                />
+                                <input
+                                    name='uid'
+                                    type="text"
+                                    value={user?.uid}
+                                    hidden
+                                    placeholder="uid"
                                     className="input input-bordered w-full max-w-xs"
                                     required
                                 />
@@ -390,8 +413,6 @@ const PersonalDetails = () => {
                             </form>)}</p>
                         </>
                     }
-
-
                 </div>
 
             </div>
@@ -415,6 +436,20 @@ const PersonalDetails = () => {
                                             className="input input-bordered w-full max-w-xs"
                                             required
                                         />
+
+                                        <input
+                                            name='uid'
+                                            type="text"
+                                            value={user?.uid}
+                                            hidden
+                                            placeholder="uid"
+                                            className="input input-bordered w-full max-w-xs"
+                                            required
+                                        />
+
+
+
+
 
                                     </div>
 
@@ -528,7 +563,7 @@ const PersonalDetails = () => {
                 <div className="collapse-content text-black text-primary-content ">
 
                     {
-                        career.length > 1 ?
+                        career.length < 1 ?
                             <form onSubmit={handleCareerDetails}>
                                 <div >
                                     <div className="form-control w-full  mt-3 ">
@@ -554,6 +589,17 @@ const PersonalDetails = () => {
                                                 className="input input-bordered w-full mb-3"
                                                 required
                                             />
+                                            <input
+                                                name='uid'
+                                                type="text"
+                                                value={user?.uid}
+                                                hidden
+                                                placeholder="uid"
+                                                className="input input-bordered w-full max-w-xs"
+                                                required
+                                            />
+
+
 
                                         </div>
                                         <div className="form-control w-1/2 max-w-xs ">
@@ -577,7 +623,6 @@ const PersonalDetails = () => {
                                 <input className='btn btn-warning w-full max-w-xs text-white' type="submit" value="save" />
                             </form>
                             :
-
                             <>
                                 {
                                     career.map((c, index) =>
