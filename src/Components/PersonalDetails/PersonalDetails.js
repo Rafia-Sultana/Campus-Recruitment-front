@@ -55,6 +55,7 @@ const PersonalDetails = () => {
         e.preventDefault()
         const uid = e.target.uid.value;
         const name = e.target.name.value;
+        const email = e.target.email.value;
         const fathername = e.target.fathername.value;
         const mothername = e.target.mothername.value;
         const dob = e.target.dob.value;
@@ -63,8 +64,8 @@ const PersonalDetails = () => {
         const nationality = e.target.nationality.value;
         const mbl_num = e.target.mbl_num.value;
 
-        console.log(name, gender, fathername, mothername, dob, gender, religion, nationality, mbl_num, bloodGroup)
-        const personal = { uid, name, mothername, fathername, dob, gender, religion, nationality, mbl_num, bloodGroup }
+        console.log(name, email, gender, fathername, mothername, dob, gender, religion, nationality, mbl_num, bloodGroup)
+        const personal = { uid, email, name, mothername, fathername, dob, gender, religion, nationality, mbl_num, bloodGroup }
 
         //POST personal details
         fetch('http://localhost:5000/personal', {
@@ -169,6 +170,16 @@ const PersonalDetails = () => {
                                 <input
                                     name='name'
                                     type="text"
+                                    placeholder=""
+                                    className="input input-bordered w-full max-w-xs"
+                                    required
+                                />
+                                <label className="label">
+                                    <span className="label-text">Your Email</span>
+                                </label>
+                                <input
+                                    name='email'
+                                    type="email"
                                     placeholder=""
                                     className="input input-bordered w-full max-w-xs"
                                     required

@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 const JobDetails = () => {
     const { id } = useParams()
     const [postJobs, setPostJobs] = useState([])
+    console.log(postJobs)
     const sentences = postJobs?.jobResponsibilities?.split('. ')
     const benefitsSentences = postJobs?.otherBenefits?.split('. ')
     /*  console.log(benefitsSentences) */

@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 const AddVacancy = () => {
-
+  const [user] = useAuthState(auth);
 
   const [jobTitle, setJobTitle] = useState("")
 
   const handleJobPost = (e) => {
     e.preventDefault()
+    const uid = e.target.uid.value;
+    const name = e.target.name.value;
     const jobResponsibilities = e.target.jobResponsibilities.value;
     const educationalRequirements = e.target.educationalRequirements.value;
     const employmentStatus = e.target.employmentStatus.value;
@@ -20,12 +24,12 @@ const AddVacancy = () => {
     const apply_date = e.target.apply_date.value
     const last_date = e.target.last_date.value
     const salary = e.target.salary.value
-    console.log(jobResponsibilities, employmentStatus, educationalRequirements, workPlace, experienceRequirements, additionalRequirements, otherBenefits, openings, location, apply_date, last_date, salary, jobTitle)
+    console.log(uid, name, jobResponsibilities, employmentStatus, educationalRequirements, workPlace, experienceRequirements, additionalRequirements, otherBenefits, openings, location, apply_date, last_date, salary, jobTitle)
 
-    const user = { jobTitle, jobResponsibilities, employmentStatus, educationalRequirements, workPlace, experienceRequirements, additionalRequirements, otherBenefits, location, openings, apply_date, last_date, salary }
+    const user = { uid, name, jobTitle, jobResponsibilities, employmentStatus, educationalRequirements, workPlace, experienceRequirements, additionalRequirements, otherBenefits, location, openings, apply_date, last_date, salary }
 
 
-    fetch('http://localhost:5000/user', {
+    fetch(`http://localhost:5000/user`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -76,6 +80,12 @@ const AddVacancy = () => {
         </select>
         <div className="form-control">
           <label className="label">
+            <span className="label-text">Company Name</span>
+          </label>
+          <textarea
+            name='name'
+            className="textarea textarea-bordered h-8"></textarea>
+          <label className="label">
             <span className="label-text">Job Responsibilities</span>
           </label>
           <textarea
@@ -96,6 +106,15 @@ const AddVacancy = () => {
           <label className="label">
             <span className="label-text">Work Place</span>
           </label>
+          <input
+            name='uid'
+            type="text"
+            value={user?.uid}
+            hidden
+            placeholder="uid"
+            className="input input-bordered w-full max-w-xs"
+            required
+          />
           <textarea
             name='workPlace'
             className="textarea textarea-bordered h-8"></textarea>

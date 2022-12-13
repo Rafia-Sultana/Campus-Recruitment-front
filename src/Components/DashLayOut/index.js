@@ -81,6 +81,11 @@ export function DashLayOut() {
                                         <Link to='/dashboard/all' className=" ">All Application </Link>
 
                                     </div>
+                                    <div className="">
+                                        <Link to='/dashboard/companyprofile' className=" ">Company Profile </Link>
+
+                                    </div>
+                                    <Link to='/dashboard/viewpostjob' className=" ">View Post Jobs </Link>
                                 </div>
                             </>
                         }

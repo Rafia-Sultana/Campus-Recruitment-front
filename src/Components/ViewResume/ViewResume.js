@@ -52,10 +52,10 @@ const ViewResume = () => {
                 }
             )
     }, [])
-    console.log(employmenthistory)
+    /* console.log(employmenthistory) */
     //viewing as a sentence of responsibilites
     const sentences = employmenthistory[0]?.responsibilities?.split('.')
-    console.log(sentences)
+    /*     console.log(sentences) */
 
     // academic fetching
     const [academic, setAcademic] = useState([]);

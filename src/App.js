@@ -38,6 +38,10 @@ import EmployeLogin from './Pages/EmployeLogin/EmployeLogin';
 import AdminLogin from './Pages/AdminLogin/AdminLogin';
 import ViewAllCV from './Components/ViewAllCV/ViewAllCV';
 import SingleCv from './Components/SingleCv/SingleCv';
+import CompanyProfile from './Components/CompanyProfile/CompanyProfile';
+import SearchPage from './Components/JobApplication/SearchPage/SearchPage';
+import ViewPostJob from './Components/ViewPostJob/ViewPostJob';
+import ViewPerCv from './Components/ViewPerCv/ViewPerCv';
 
 
 
@@ -73,6 +77,10 @@ function App() {
             <Route path='sortlisted' element={<SortListed></SortListed>}></Route>
             <Route path='rejected' element={<Rejected></Rejected>}></Route>
             <Route path='all' element={<All></All>}></Route>
+            <Route path='searchpage' element={<SearchPage></SearchPage>}></Route>
+            <Route path='viewpostjob' element={<ViewPostJob></ViewPostJob>}></Route>
+            <Route path='viewpercv' element={<ViewPerCv></ViewPerCv>}></Route>
+            <Route path='companyprofile' element={<CompanyProfile></CompanyProfile>}></Route>
           </Route>
           <Route path='apply/:id' element={<ApplyJob></ApplyJob>}> </Route>
           <Route path='viewcv/:id' element={<ViewAllCV></ViewAllCV>}> </Route>
