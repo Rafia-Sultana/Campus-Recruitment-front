@@ -13,6 +13,7 @@ const EmployeSignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const handleEmployeSignUp = async (e) => {
         e.preventDefault()

@@ -59,33 +59,32 @@ export function DashLayOut() {
                         }
                         {user?.email && candidate?.role === "employee" &&
                             <>
-                                <div className="collapse">
-                                    <input type="checkbox" />
-                                    <div className="collapse-title  font-medium">
-                                        Post Vacancy
-                                    </div>
-                                    <div className="collapse-content">
-                                        <Link to='/dashboard/addVacancy' className=" ">Add Vacancy  </Link>
-                                        <p>Manage Vacancy</p>
-                                    </div>
+
+                                <div className="">
+                                    <Link to='/dashboard/addVacancy' className="mx-4 my-3 font-medium">Post Vacancy </Link>
                                 </div>
                                 <div className="collapse">
                                     <input type="checkbox" />
-                                    <div className="collapse-title ">
+                                    <div className="collapse-title font-medium ">
                                         Job Application
                                     </div>
-                                    <div className="collapse-content ">
+                                    <div className="collapse-content text-sm">
                                         <Link to='/dashboard/new' className="flex justify-start">New Application </Link>
                                         <Link to='/dashboard/sortlisted' className=" ">Sort Listed Application </Link>
-                                        <Link to='/dashboard/rejected' className=" ">Rejected Application </Link>
+                                        <Link to='/dashboard/rejected' className=" ">Rejected Application </Link><br />
                                         <Link to='/dashboard/all' className=" ">All Application </Link>
 
                                     </div>
-                                    <div className="">
-                                        <Link to='/dashboard/companyprofile' className=" ">Company Profile </Link>
+                                    <div className="mx-4 my-2">
+                                        <Link to='/dashboard/companyprofile' className="font-medium ">Company Profile </Link>
 
                                     </div>
-                                    <Link to='/dashboard/viewpostjob' className=" ">View Post Jobs </Link>
+                                    <div>
+                                        <Link to='/dashboard/viewpostjob' className="mx-4 mb-10 font-medium">View Post Jobs </Link>
+                                    </div>
+                                    <div>
+                                        <Link to='/dashboard/companyreport' className="mx-4 my-5 font-medium ">Report </Link>
+                                    </div>
                                 </div>
                             </>
                         }

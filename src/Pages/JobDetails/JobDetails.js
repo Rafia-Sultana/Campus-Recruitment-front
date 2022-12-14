@@ -13,7 +13,7 @@ const JobDetails = () => {
     /*  console.log(benefitsSentences) */
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${id}`)
+        fetch(`http://localhost:5000/singleJob/${id}`)
             .then(res => res.json())
             .then(data => setPostJobs(data))
     }, [])

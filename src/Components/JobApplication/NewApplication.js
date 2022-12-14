@@ -12,14 +12,19 @@ const NewApplication = () => {
 
     console.log(user?.uid)
     const [cv, setCv] = useState([])
+    /*  console.log(cv); */
     useEffect(() => {
         fetch(`http://localhost:5000/percv`)
             .then(res => res.json())
             .then(data => setCv(data))
     }, [])
-    console.log(cv[0]?.designation);
+    /*     console.log(cv[0]?.designation); */
     const filteredCv = cv.filter(data => data.companyUid === user?.uid)
     console.log(filteredCv)
+    const handleShortlist = (e, uid, filteredCvId) => {
+        e.preventDefault()
+
+    }
 
     return (
         <div>
@@ -44,23 +49,36 @@ const NewApplication = () => {
                             <td>{filteredCv[0]?.designation}</td>
 
                             <td>
-                                <Link to='/dashboard/viewpercv'>
-                                    <button className="bg-success p-4">View CV</button>
-                                </Link>
+
+                                {filteredCv[0] ?
+                                    <> <Link to='/dashboard/viewpercv'>
+                                        <button className="bg-success p-3">View CV</button>
+                                    </Link>
+                                    </>
+                                    : <></>
+
+
+
+                                }
+
                             </td>
                             <td>
-                                <button className="bg-sucess ">
+                                {filteredCv[0] ?
+                                    <>
+                                        <button onClick={(e) => handleShortlist(filteredCv.uid, filteredCv._id, e)}>
 
 
-                                    <BsCheckSquareFill size={30}></BsCheckSquareFill>
+                                            <BsCheckSquareFill size={30}></BsCheckSquareFill>
 
-                                </button>
-                                <button  >
+                                        </button>
+                                        <button  >
 
-                                    <CiNoWaitingSign size={30}></CiNoWaitingSign>
-                                </button>
-
-
+                                            <CiNoWaitingSign size={30}></CiNoWaitingSign>
+                                        </button>
+                                    </>
+                                    : <>
+                                    </>
+                                }
                             </td>
                         </tr>
 
