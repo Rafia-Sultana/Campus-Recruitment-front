@@ -2,8 +2,6 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useParams } from 'react-router-dom';
-import swal from 'sweetalert';
 import auth from '../../firebase.init';
 
 
@@ -13,7 +11,7 @@ const ViewVacancy = () => {
     const [appliedJob, setAppliedJob] = useState([])
 
     const [user] = useAuthState(auth)
-    /*   console.log(user) */
+    /* console.log(user) */
     useEffect(() => {
         fetch(`http://localhost:5000/allCvs`)
             .then(res => res.json())
@@ -49,13 +47,14 @@ const ViewVacancy = () => {
 
 
     let filteredData = fullCv.find(data => data.email === user?.email)
-    // console.log(filteredData);
+    console.log(filteredData);
     const handleApplyjob = (uid, jobId, e) => {
 
         e.preventDefault()
 
         filteredData = { ...filteredData, companyUid: uid, jobId }
         delete filteredData._id
+
         //POST One Candidate details
         fetch(`http://localhost:5000/percv`, {
             method: 'POST',
@@ -67,6 +66,7 @@ const ViewVacancy = () => {
         })
             .then(res => res.json())
             .then(data => {
+                console.log('success', data)
 
 
             })
@@ -124,7 +124,9 @@ const ViewVacancy = () => {
                                     {/* <Link to={`/apply/${postJob._id}`} className='bg-green-500 rounded-lg  mt-4 px-3 pb-1'>Apply For Job</Link> */}
 
                                     <button
-                                        disabled={(appliedJob.filter(data => data.jobId === postJob._id).length === 1) ? "true" : ""}
+
+                                        /*      disabled={(appliedJob.filter(data => data.jobId === postJob._id).length === 1) ? "true" : ""} */
+                                        /*                disabled={(appliedJob.filter(data => data.email === user?.email).length === 1) ? "true" : ""} */
                                         onClick={(e) => handleApplyjob(postJob.uid, postJob._id, e)}
                                         className='btn btn-success p-4'  >Apply for Job</button>
 

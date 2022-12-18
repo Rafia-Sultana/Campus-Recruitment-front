@@ -12,18 +12,51 @@ const NewApplication = () => {
 
     console.log(user?.uid)
     const [cv, setCv] = useState([])
-    /*  console.log(cv); */
+    console.log(cv);
     useEffect(() => {
         fetch(`http://localhost:5000/percv`)
             .then(res => res.json())
             .then(data => setCv(data))
     }, [])
-    /*     console.log(cv[0]?.designation); */
     const filteredCv = cv.filter(data => data.companyUid === user?.uid)
     console.log(filteredCv)
-    const handleShortlist = (e, uid, filteredCvId) => {
-        e.preventDefault()
+    const handleShortList = (f) => {
+        console.log(f)
 
+        //POST One Candidate details
+        fetch(`http://localhost:5000/short-list`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(f),
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data)
+
+
+            })
+    }
+    const handleRejected = (f) => {
+        console.log(f)
+
+        //POST One Candidate details handleRejected
+        fetch(`http://localhost:5000/rejected`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(f),
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data)
+
+
+            })
     }
 
     return (
@@ -33,7 +66,7 @@ const NewApplication = () => {
 
                     <thead>
                         <tr>
-                            <th></th>
+
                             <th>Name</th>
                             <th>Expertise</th>
                             <th>View</th>
@@ -43,44 +76,42 @@ const NewApplication = () => {
                     </thead>
                     <tbody>
 
-                        <tr>
-                            <td></td>
-                            <td>{filteredCv[0]?.name}</td>
-                            <td>{filteredCv[0]?.designation}</td>
 
-                            <td>
+                        {
+                            filteredCv.map((f, index) => <tr>
+                                <td>{f?.name}</td>
+                                <td>{f?.designation}</td>
+                                <td>
 
-                                {filteredCv[0] ?
-                                    <> <Link to='/dashboard/viewpercv'>
-                                        <button className="bg-success p-3">View CV</button>
-                                    </Link>
-                                    </>
-                                    : <></>
-
-
-
-                                }
-
-                            </td>
-                            <td>
-                                {filteredCv[0] ?
-                                    <>
-                                        <button onClick={(e) => handleShortlist(filteredCv.uid, filteredCv._id, e)}>
+                                    {f ?
+                                        <> <Link to='/dashboard/viewpercv'>
+                                            <button className="bg-success p-3">View CV</button>
+                                        </Link>
+                                        </>
+                                        : <></>
 
 
-                                            <BsCheckSquareFill size={30}></BsCheckSquareFill>
 
-                                        </button>
-                                        <button  >
+                                    }
 
-                                            <CiNoWaitingSign size={30}></CiNoWaitingSign>
-                                        </button>
-                                    </>
-                                    : <>
-                                    </>
-                                }
-                            </td>
-                        </tr>
+                                </td>
+                                <td>
+                                    {f ?
+                                        <>
+                                            <button onClick={() => handleShortList(f)}>
+                                                <BsCheckSquareFill size={30}></BsCheckSquareFill>
+                                            </button>
+                                            <button onClick={() => handleRejected(f)} >
+
+                                                <CiNoWaitingSign size={30}></CiNoWaitingSign>
+                                            </button>
+                                        </>
+                                        : <>
+                                        </>
+                                    }
+                                </td>
+                            </tr>)
+                        }
 
 
 

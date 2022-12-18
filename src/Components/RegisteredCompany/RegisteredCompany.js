@@ -1,19 +1,28 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Modal from './Modal';
 
 const RegisteredCompany = () => {
   const [user] = useAuthState(auth);
   const [registeredCompany, setRegisteredCompany] = useState([])
+  const [toggle, setToggle] = useState(false)
 
   const url = `http://localhost:5000/role-user/employee`;
   useEffect(() => {
     fetch(url).then(res => res.json()).then(data => setRegisteredCompany(data))
-  }, [url])
-  /* console.log(registeredCompany); */
+  }, [url, toggle])
+  const handleDisable = (id) => {
+    /* console.log(id) */
+    const dlt = `http://localhost:5000/role-user/delete/${id}`
+    fetch((dlt),
+      { method: 'DELETE' })
+      .then(() => console.log('deleted succesful'))
+      ;
+    setToggle(!toggle)
+  }
+
   return (
     <div>
       <div className="overflow-x-auto">
@@ -36,13 +45,15 @@ const RegisteredCompany = () => {
                 <td>{r.companyname}  </td>
                 <td>{r.companyaddress}</td>
                 <td>{r.email}</td>
-                {/* The button to open modal */}
+
                 <label htmlFor={`my-modal-${r._id}`} className="btn mt-4">Details</label>
 
-                {/* Put this part before </body> tag */}
+
                 <Modal r={r} />
 
-                <td><button className='bg-red-500 p-3 rounded'>delete</button></td>
+                <td><button onClick={() => handleDisable(r._id)}
+
+                  className='bg-red-500 p-3 rounded'>disabled</button></td>
 
               </tr>)
             }
@@ -54,4 +65,4 @@ const RegisteredCompany = () => {
   );
 };
 
-export default RegisteredCompany;
+export default RegisteredCompany; 

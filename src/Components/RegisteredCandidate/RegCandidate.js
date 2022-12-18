@@ -7,12 +7,21 @@ import auth from '../../firebase.init';
 const RegisteredCandidate = () => {
   const [user] = useAuthState(auth);
   const [registeredCandidate, setRegisteredCandidate] = useState([])
+  const [toggle, setToggle] = useState(false)
 
   const url = `http://localhost:5000/role-user/candidate`;
   useEffect(() => {
     fetch(url).then(res => res.json()).then(data => setRegisteredCandidate(data))
-  }, [url])
-  /* console.log(registeredCompany); */
+  }, [url, toggle])
+  const handleDisable = (id) => {
+    const dlt = `http://localhost:5000/role-user/delete/${id}`
+    fetch((dlt),
+      { method: 'DELETE' })
+      .then(() => console.log('deleted succesful'))
+      ;
+    setToggle(!toggle)
+  }
+
   return (
     <div>
       <div className="overflow-x-auto">
@@ -38,7 +47,8 @@ const RegisteredCandidate = () => {
                 <td></td>
 
 
-                <td><button className='bg-red-500 p-3 rounded'>delete</button></td>
+                <td><button onClick={() => handleDisable(r._id)}
+                  className='bg-red-500 p-3 rounded'>disabled</button></td>
 
               </tr>)
             }
@@ -50,4 +60,4 @@ const RegisteredCandidate = () => {
   );
 };
 
-export default RegisteredCandidate;
+export default RegisteredCandidate; 

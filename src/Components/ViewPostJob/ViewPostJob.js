@@ -1,9 +1,9 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Modal from '../RegisteredCompany/Modal';
 const ViewPostJob = () => {
     const [user] = useAuthState(auth);
     const [postJobs, setPostJobs] = useState([])
@@ -25,6 +25,7 @@ const ViewPostJob = () => {
                             <th>location</th>
                             <th>Apply_Start_date</th>
                             <th>Apply_Last_date</th>
+                            <th> </th>
 
                         </tr>
                     </thead>
@@ -37,7 +38,9 @@ const ViewPostJob = () => {
                                 <td>{postJob.location}</td>
                                 <td>{postJob.apply_date} </td>
                                 <td>{postJob.last_date}</td>
-                                <td></td>
+                                <td>
+
+                                </td>
                             </tr>
 
                             )

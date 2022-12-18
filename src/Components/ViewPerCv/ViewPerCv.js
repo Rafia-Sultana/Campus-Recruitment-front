@@ -27,6 +27,10 @@ const ViewPerCv = () => {
     console.log(cv[0]?.designation);
     return (
         <div>
+
+
+
+
             <div className=''>
                 <p className='pl-14'>You can download this as <button onClick={handlePrint} className='text-underline text-blue-400'>pdf</button></p>
                 <div className='pl-14 pr-16 pt-14'
@@ -165,7 +169,7 @@ const ViewPerCv = () => {
                 </div>
 
             </div>
-        </div>
+        </div >
     );
 };
 

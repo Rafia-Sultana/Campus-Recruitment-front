@@ -109,7 +109,7 @@ const ViewAllJob = () => {
                                             </div>
                                         </Link>
 
-                                        <div className="">
+                                        {/*     <div className="">
                                             <button>
                                                 <Link to={`/apply/${job._id}`}
                                                     className='btn btn-warning rounded-full px-12 ease-in duration-300 ... button'
@@ -117,7 +117,7 @@ const ViewAllJob = () => {
                                                 >Apply </Link>
                                             </button>
 
-                                        </div>
+                                        </div> */}
 
                                     </div>
 
