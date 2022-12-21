@@ -14,7 +14,7 @@ const PersonalDetails = () => {
             .then(res => res.json())
             .then(
                 data => {
-                    // console.log(data)
+                    // console.log((data)
                     setPersonal(data)
                 }
             )
@@ -28,7 +28,7 @@ const PersonalDetails = () => {
             .then(res => res.json())
             .then(
                 data => {
-                    // console.log(data)
+                    // console.log((data)
                     SetAddress(data)
                 }
             )
@@ -40,7 +40,7 @@ const PersonalDetails = () => {
             .then(res => res.json())
             .then(
                 data => {
-                    // console.log(data)
+                    // console.log((data)
                     SetCareer(data)
                 }
             )
@@ -64,7 +64,7 @@ const PersonalDetails = () => {
         const nationality = e.target.nationality.value;
         const mbl_num = e.target.mbl_num.value;
 
-        console.log(name, email, gender, fathername, mothername, dob, gender, religion, nationality, mbl_num, bloodGroup)
+       
         const personal = { uid, email, name, mothername, fathername, dob, gender, religion, nationality, mbl_num, bloodGroup }
 
         //POST personal details
@@ -77,7 +77,7 @@ const PersonalDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                
                 toast("Succesfully Personal Details added!")
 
             })
@@ -97,7 +97,7 @@ const PersonalDetails = () => {
 
 
         const uid = e.target.uid.value;
-        console.log(uid);
+        
         const district = e.target.district.value;
         const thana = e.target.thana.value;
         const postOffice = e.target.postOffice.value;
@@ -115,7 +115,7 @@ const PersonalDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                
                 toast("Succesfully Address Details added!")
                 /* e.target.reset(); */
             })
@@ -124,11 +124,11 @@ const PersonalDetails = () => {
     const handleCareerDetails = (e) => {
         e.preventDefault()
         const uid = e.target.uid.value;
-        console.log(uid);
+        
         const objective = e.target.objective.value;
         const expectedsalary = e.target.expectedsalary.value;
         const jobnature = e.target.jobnature.value;
-        /*  console.log(objective, expectedsalary, jobnature); */
+        
         const career = { uid, objective, expectedsalary, jobnature }
 
         //POST career details
@@ -141,7 +141,7 @@ const PersonalDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                
                 toast("Succesfully Career Details added!")
                 /* e.target.reset(); */
             })

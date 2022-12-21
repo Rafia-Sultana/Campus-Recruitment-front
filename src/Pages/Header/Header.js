@@ -5,10 +5,11 @@ import './Header.css'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
-
+import { useEffect,useState } from 'react';
 
 const Header = () => {
     const [user] = useAuthState(auth);
+   
     return (
         <div className='header-container'>
             <div className='logoBox'>
@@ -17,6 +18,7 @@ const Header = () => {
             <div>
                 <NavLink to='/' >HOME</NavLink>
                 <NavLink to='/dashboard' >DASHBOARD</NavLink>
+              
                 <NavLink to='/about' >ABOUT </NavLink>
                 {user ?
                     <>

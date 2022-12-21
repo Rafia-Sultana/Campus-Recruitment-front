@@ -35,10 +35,8 @@ const ViewAllCV = () => {
         fullCv.push(singleData)
     }
     const { id } = useParams()
-    console.log(fullCv)
-    console.log(id);
     const filteredData = fullCv.filter(data => data._id === id)
-    console.log(filteredData)
+    
     return (
         <div className="">
             {filteredData.map((cv, index) => (<SingleCv key={index + 1} cv={cv} />))}

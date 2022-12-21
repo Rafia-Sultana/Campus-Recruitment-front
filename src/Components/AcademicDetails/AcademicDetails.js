@@ -16,7 +16,7 @@ const AcademicDetails = () => {
             .then(res => res.json())
             .then(
                 data => {
-                    // console.log(data)
+                    // console.log((data)
                     setAcademic(data)
                 }
             )
@@ -31,7 +31,7 @@ const AcademicDetails = () => {
             .then(res => res.json())
             .then(
                 data => {
-                    // console.log(data)
+                    // console.log((data)
                     setTraining(data)
                 }
             )
@@ -63,7 +63,7 @@ const AcademicDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+
                 toast("Succesfully academic Details added!")
 
             })
@@ -92,7 +92,6 @@ const AcademicDetails = () => {
         const location = e.target.location.value;
         const duration = e.target.duration.value;
         const country = e.target.country.value;
-        console.log(uid, country, location, trainingtitle, year, instituenametraing, duration)
         const training = { uid, country, location, trainingtitle, year, instituenametraing, duration }
 
         //POST Training Summary
@@ -105,7 +104,7 @@ const AcademicDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+
                 toast("Succesfully training  Details added!")
 
             })

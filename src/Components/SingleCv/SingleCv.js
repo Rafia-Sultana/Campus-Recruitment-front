@@ -3,9 +3,6 @@ import React from 'react';
 const SingleCv = ({ cv }) => {
 
 
-
-
-    console.log(cv);
     return (
         <div>
 

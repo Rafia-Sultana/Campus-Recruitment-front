@@ -11,7 +11,6 @@ const ViewVacancy = () => {
     const [appliedJob, setAppliedJob] = useState([])
 
     const [user] = useAuthState(auth)
-    /* console.log(user) */
     useEffect(() => {
         fetch(`http://localhost:5000/allCvs`)
             .then(res => res.json())
@@ -42,17 +41,16 @@ const ViewVacancy = () => {
         fullCv.push(singleData)
     }
 
-    // console.log(fullCv)
-
 
 
     let filteredData = fullCv.find(data => data.email === user?.email)
-    console.log(filteredData);
-    const handleApplyjob = (uid, jobId, e) => {
+    const handleApplyjob = (uid, jobId,postJob, e) => {
+   
 
-        e.preventDefault()
+        e.preventDefault();
 
-        filteredData = { ...filteredData, companyUid: uid, jobId }
+        filteredData = { ...filteredData, companyUid: uid, jobId,...postJob }
+
         delete filteredData._id
 
         //POST One Candidate details
@@ -65,11 +63,7 @@ const ViewVacancy = () => {
 
         })
             .then(res => res.json())
-            .then(data => {
-                console.log('success', data)
-
-
-            })
+            .then()
     }
 
     useEffect(() => {
@@ -83,9 +77,6 @@ const ViewVacancy = () => {
     }, [])
 
 
-    // console.log(appliedJob);
-
-
     const [postJobs, setPostJobs] = useState([])
     useEffect(() => {
         fetch(`http://localhost:5000/user`)
@@ -93,7 +84,10 @@ const ViewVacancy = () => {
             .then(data => setPostJobs(data))
     }, [])
 
-    // console.log(postJobs);
+
+  
+    // K7nNEab6I8VsOIA2ZwT3O5R7QWb2
+    // GiNkYnYYjfRyH3SGEuZ703wdW2A3
     return (
         <div>
             <div className="overflow-x-auto mt-10">
@@ -120,14 +114,14 @@ const ViewVacancy = () => {
                                 <td>{postJob.apply_date} </td>
                                 <td>{postJob.last_date}</td>
                                 <td>
-
-                                    {/* <Link to={`/apply/${postJob._id}`} className='bg-green-500 rounded-lg  mt-4 px-3 pb-1'>Apply For Job</Link> */}
-
                                     <button
 
-                                        /*      disabled={(appliedJob.filter(data => data.jobId === postJob._id).length === 1) ? "true" : ""} */
-                                        /*                disabled={(appliedJob.filter(data => data.email === user?.email).length === 1) ? "true" : ""} */
-                                        onClick={(e) => handleApplyjob(postJob.uid, postJob._id, e)}
+                                       /*  disabled={(appliedJob.filter(data => data.jobId === postJob._id).length > 1) ?  "true" : ""} */
+                                        /*  disabled={(appliedJob.filter(data => data.email === user?.email).length === 1) ? "true" : ""}
+                                         */
+
+                                        onClick={(e) => handleApplyjob(postJob.uid, postJob._id,postJob, e)}
+                                      
                                         className='btn btn-success p-4'  >Apply for Job</button>
 
                                 </td>
@@ -144,3 +138,5 @@ const ViewVacancy = () => {
 };
 
 export default ViewVacancy;
+
+// disabled={(appliedJob.filter(data => data.jobId === postJob._id).length > 1) ? (appliedJob.filter(data => data.uid === user?.uid).length > 1)&& "true" : ""}

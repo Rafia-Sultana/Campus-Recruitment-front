@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const ApplyJob = () => {
     const { id } = useParams()
-    /* console.log(id) */
+    /* console.log((id) */
     const [postJobs, setPostJobs] = useState([])
 
     useEffect(() => {
@@ -18,11 +18,11 @@ const ApplyJob = () => {
     /*     useEffect(() => {
             fetch(`http://localhost:5000/apply/${id}`)
                 .then(res => res.json())
-                .then(data => console.log("singleData.....", data))
+                .then(data => console.log(("singleData.....", data))
         }, []) */
 
     // useEffect(() => {
-    //     console.log("postjobs......", postJobs);
+    //     console.log(("postjobs......", postJobs);
     // }, [postJobs])
 
 
@@ -32,7 +32,7 @@ const ApplyJob = () => {
         const name = e.target.name.value
         const email = e.target.email.value
         const phn_num = e.target.phn_num.value
-        console.log(name, email, phn_num)
+        // console.log((name, email, phn_num)
         const stuInfo = { name, email, phn_num }
 
         fetch(`http://localhost:5000/apply`, {
@@ -54,14 +54,14 @@ const ApplyJob = () => {
     /*     useEffect(() => {
             fetch(`http://localhost:5000/apply/${id}`)
                 .then(res => res.json())
-                .then(data => console.log("id............", data))
+                .then(data => console.log(("id............", data))
         }, [])
      */
 
 
 
     // const data = postJobs.find(job => job.email === stuInfo.email)
-    // console.log("find...........", data)
+    // console.log(("find...........", data)
     return (
         <div className='flex justify-center items-center my-36'>
 

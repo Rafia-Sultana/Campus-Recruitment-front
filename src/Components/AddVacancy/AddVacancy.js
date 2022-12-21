@@ -11,7 +11,7 @@ const AddVacancy = () => {
   const handleJobPost = (e) => {
     e.preventDefault()
     const uid = e.target.uid.value;
-    const name = e.target.name.value;
+    const jobName = e.target.jobname.value;
     const jobResponsibilities = e.target.jobResponsibilities.value;
     const educationalRequirements = e.target.educationalRequirements.value;
     const employmentStatus = e.target.employmentStatus.value;
@@ -24,9 +24,9 @@ const AddVacancy = () => {
     const apply_date = e.target.apply_date.value
     const last_date = e.target.last_date.value
     const salary = e.target.salary.value
-    console.log(uid, name, jobResponsibilities, employmentStatus, educationalRequirements, workPlace, experienceRequirements, additionalRequirements, otherBenefits, openings, location, apply_date, last_date, salary, jobTitle)
+    // console.log((uid, name, jobResponsibilities, employmentStatus, educationalRequirements, workPlace, experienceRequirements, additionalRequirements, otherBenefits, openings, location, apply_date, last_date, salary, jobTitle)
 
-    const user = { uid, name, jobTitle, jobResponsibilities, employmentStatus, educationalRequirements, workPlace, experienceRequirements, additionalRequirements, otherBenefits, location, openings, apply_date, last_date, salary }
+    const user = { uid, jobName, jobTitle, jobResponsibilities, employmentStatus, educationalRequirements, workPlace, experienceRequirements, additionalRequirements, otherBenefits, location, openings, apply_date, last_date, salary }
 
 
     fetch(`http://localhost:5000/user`, {
@@ -83,37 +83,39 @@ const AddVacancy = () => {
             <span className="label-text">Company Name</span>
           </label>
           <textarea
-            name='name'
+            name='jobname' required
             className="textarea textarea-bordered h-8"></textarea>
           <label className="label">
             <span className="label-text">Job Responsibilities</span>
           </label>
-          <textarea
+          <textarea required
             name='jobResponsibilities'
             className="textarea textarea-bordered h-8"></textarea>
           <label className="label">
             <span className="label-text">Educational Requirements</span>
           </label>
-          <textarea
+          <textarea required
             name='educationalRequirements'
             className="textarea textarea-bordered h-8"></textarea>
           <label className="label">
             <span className="label-text">Employment Status</span>
           </label>
-          <textarea
+          <textarea required
             name='employmentStatus'
             className="textarea textarea-bordered h-8"></textarea>
           <label className="label">
             <span className="label-text">Work Place</span>
           </label>
           <input
+            required
             name='uid'
             type="text"
             value={user?.uid}
             hidden
+
             placeholder="uid"
             className="input input-bordered w-full max-w-xs"
-            required
+
           />
           <textarea
             name='workPlace'
@@ -121,33 +123,33 @@ const AddVacancy = () => {
           <label className="label">
             <span className="label-text">Experience Requirements</span>
           </label>
-          <textarea
+          <textarea required
             name='experienceRequirements'
             className="textarea textarea-bordered h-8"></textarea>
           <label className="label">
             <span className="label-text">Additional Requirements</span>
           </label>
-          <textarea
+          <textarea required
             name='additionalRequirements'
             className="textarea textarea-bordered h-8"></textarea>
           <label className="label">
             <span className="label-text">Compansion & Other benefits</span>
           </label>
-          <textarea
+          <textarea required
             name='otherBenefits'
             className="textarea textarea-bordered h-8"></textarea>
 
           <label className="label">
             <span className="label-text">Job Location</span>
           </label>
-          <textarea
+          <textarea required
             name='location'
             className="textarea textarea-bordered h-8"></textarea>
 
           <label className="label">
             <span className="label-text">No. of Openings</span>
           </label>
-          <textarea
+          <textarea required
             name='openings'
             className="textarea textarea-bordered h-8"></textarea>
         </div>
@@ -158,7 +160,7 @@ const AddVacancy = () => {
             <label className="label">
               <span className="label-text">Apply date</span>
             </label>
-            <input
+            <input required
               name='apply_date'
               type="date"
               className="input input-bordered w-full max-w-xs"
@@ -169,7 +171,7 @@ const AddVacancy = () => {
             <label className="label">
               <span className="label-text">Last date</span>
             </label>
-            <input
+            <input required
               name='last_date'
               type="date"
               className="input input-bordered w-full max-w-xs"
@@ -182,7 +184,7 @@ const AddVacancy = () => {
             <label className="label">
               <span className="label-text">Monthly Salary</span>
             </label>
-            <textarea
+            <textarea required
               name='salary'
               placeholder='$'
               className="textarea textarea-bordered w-96 h-8"></textarea>

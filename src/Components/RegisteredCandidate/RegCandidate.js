@@ -17,10 +17,11 @@ const RegisteredCandidate = () => {
     const dlt = `http://localhost:5000/role-user/delete/${id}`
     fetch((dlt),
       { method: 'DELETE' })
-      .then(() => console.log('deleted succesful'))
+      .then()
       ;
     setToggle(!toggle)
   }
+  
 
   return (
     <div>

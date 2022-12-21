@@ -44,7 +44,7 @@ const All = () => {
         e.preventDefault()
         const searchText = e.target.search.value;
         const search = { searchText }
-        console.log(search);
+        // console.log((search);
 
     }
 

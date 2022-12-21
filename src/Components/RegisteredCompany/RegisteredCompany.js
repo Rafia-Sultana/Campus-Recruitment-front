@@ -14,11 +14,11 @@ const RegisteredCompany = () => {
     fetch(url).then(res => res.json()).then(data => setRegisteredCompany(data))
   }, [url, toggle])
   const handleDisable = (id) => {
-    /* console.log(id) */
+    /* console.log((id) */
     const dlt = `http://localhost:5000/role-user/delete/${id}`
     fetch((dlt),
       { method: 'DELETE' })
-      .then(() => console.log('deleted succesful'))
+      .then()
       ;
     setToggle(!toggle)
   }

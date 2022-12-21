@@ -26,9 +26,7 @@ const SocialMedia = () => {
   const handlegooglesignup = (e) => {
     e.preventDefault()
     const email = e.target.email.value;
-    console.log(email);
     const password = e.target.password.value;
-    console.log(password);
   }
   return (
     <div className="card-body">

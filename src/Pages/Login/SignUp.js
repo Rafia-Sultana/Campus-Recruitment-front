@@ -38,10 +38,7 @@ const SignUp = () => {
             body: JSON.stringify(candidateInfo),
         })
             .then(res => res.json())
-            .then(data => {
-
-                console.log(data)
-            })
+            .then()
     }
 
 

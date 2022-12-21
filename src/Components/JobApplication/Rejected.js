@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 const Rejected = () => {
     const [user] = useAuthState(auth)
-    /* console.log(user?.uid); */
+    /* console.log((user?.uid); */
 
     const [perRejected, setRejected] = useState([])
     useEffect(() => {

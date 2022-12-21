@@ -42,6 +42,8 @@ import CompanyProfile from './Components/CompanyProfile/CompanyProfile';
 import SearchPage from './Components/JobApplication/SearchPage/SearchPage';
 import ViewPostJob from './Components/ViewPostJob/ViewPostJob';
 import ViewPerCv from './Components/ViewPerCv/ViewPerCv';
+import Report from './Components/Report/Report';
+import CandidateSorted from './Components/CandidateSorted/CandidateSorted';
 
 
 
@@ -66,6 +68,8 @@ function App() {
 
 
             <Route path='fillEduForm' element={<FillEduForm></FillEduForm>}>  </Route>
+            <Route path='candidatesorted' element={<CandidateSorted></CandidateSorted>}>  </Route>
+
             {          /*  <Route path='personaldetails' element={<PersonalDetails></PersonalDetails>}></Route>
             <Route path='academicdetails' element={<AcademicDetails></AcademicDetails>}></Route>
             <Route path='employmenthistory' element={<EmploymentHistory></EmploymentHistory>}></Route> */}
@@ -79,9 +83,11 @@ function App() {
             <Route path='all' element={<All></All>}></Route>
             <Route path='searchpage' element={<SearchPage></SearchPage>}></Route>
             <Route path='viewpostjob' element={<ViewPostJob></ViewPostJob>}></Route>
-            <Route path='viewpercv' element={<ViewPerCv></ViewPerCv>}></Route>
+
             <Route path='companyprofile' element={<CompanyProfile></CompanyProfile>}></Route>
+            <Route path='companyreport' element={<Report></Report>}></Route>
           </Route>
+          <Route path='viewpercv/:id' element={<ViewPerCv></ViewPerCv>}></Route>
           <Route path='apply/:id' element={<ApplyJob></ApplyJob>}> </Route>
           <Route path='viewcv/:id' element={<ViewAllCV></ViewAllCV>}> </Route>
           <Route path='/viewalljobs' element={<ViewAllJob></ViewAllJob>}></Route>

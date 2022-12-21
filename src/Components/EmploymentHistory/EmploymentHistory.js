@@ -13,7 +13,7 @@ const EmploymentHistory = () => {
             .then(res => res.json())
             .then(
                 data => {
-                    // console.log(data)
+                    // console.log((data)
                     setEmploymenthistory(data)
                 }
             )
@@ -31,7 +31,7 @@ const EmploymentHistory = () => {
         const department = e.target.department.value;
         const period = e.target.period.value;
         const companylocation = e.target.companylocation.value;
-        console.log(companyname, companybuisness, companylocation, designation, responsibilities, department, period);
+        // console.log((companyname, companybuisness, companylocation, designation, responsibilities, department, period);
         const employmentHistoryDetails = { uid, companyname, companybuisness, companylocation, designation, responsibilities, department, period }
 
 
@@ -45,7 +45,7 @@ const EmploymentHistory = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log((data)
                 toast("Succesfully Employment History Details added!")
                 {  /* e.target.reset(); */ }
             })

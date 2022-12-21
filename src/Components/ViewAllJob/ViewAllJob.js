@@ -30,9 +30,9 @@ const ViewAllJob = () => {
 
     useEffect(() => {
         const searchMatch = postJobs.filter(postJob => postJob.jobTitle.toLowerCase().includes(search.toLowerCase()));
-        // console.log(searchMatch);
+        // console.log((searchMatch);
         setFilterJobs(searchMatch);
-        // console.log(filterJobs);
+        // console.log((filterJobs);
     }, [search, postJobs])
     return (
         <div>

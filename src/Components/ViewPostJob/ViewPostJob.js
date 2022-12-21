@@ -33,7 +33,7 @@ const ViewPostJob = () => {
 
                         {
                             postJobs.map((postJob, index) => <tr key={index}>
-                                <td>{postJob.name}</td>
+                                <td>{postJob.jobName}</td>
                                 <td>{postJob.jobTitle}</td>
                                 <td>{postJob.location}</td>
                                 <td>{postJob.apply_date} </td>

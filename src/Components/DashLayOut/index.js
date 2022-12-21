@@ -44,7 +44,7 @@ export function DashLayOut() {
                                     </div>
                                 </div>
 
-                                <Link to='/dashboard/sortlisted' className=" ">Sort Listed Application </Link>
+                                <Link to='/dashboard/candidatesorted' className=" ">Sort Listed Application </Link>
                                 <Link to='/dashboard/viewvacancy' className=" ">View Vacancy</Link>
                                 <Link to='/dashboard/history' className=" ">History of applied job</Link>
 

@@ -35,15 +35,12 @@ const EmployeSignUp = () => {
         const userInfo = { username, email, confirmpassword, companyname, publishyear, companyaddress, url, contactname, contactemail, contactmobile, contactdesignation, country, district }
         await handleEmployee(userInfo)
 
-
-        /*  console.log(username, password, confirmpassword, companyname, publishyear, url, contactname, contactemail, contactmobile, contactdesignation, companyaddress, country, district); */
     }
 
     const handleEmployee = (userInfo) => {
         const url = 'http://localhost:5000/candidates'
         const role = 'employee'
         const employeeInfo = { ...userInfo, role }
-        console.log(employeeInfo);
         fetch(url, {
             method: 'POST',
             headers: {
@@ -52,10 +49,7 @@ const EmployeSignUp = () => {
             body: JSON.stringify(employeeInfo),
         })
             .then(res => res.json())
-            .then(data => {
-
-                console.log(data)
-            })
+            .then()
     }
 
 

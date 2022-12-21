@@ -21,7 +21,6 @@ const ViewResume = () => {
             .then(res => res.json())
             .then(
                 data => {
-                    console.log(data)
                     setPersonal(data)
                 }
             )
@@ -33,7 +32,6 @@ const ViewResume = () => {
             .then(res => res.json())
             .then(
                 data => {
-                    // console.log(data)
                     SetAddress(data)
                 }
             )
@@ -47,15 +45,13 @@ const ViewResume = () => {
             .then(res => res.json())
             .then(
                 data => {
-                    // console.log(data)
+                    
                     setEmploymenthistory(data)
                 }
             )
     }, [])
-    /* console.log(employmenthistory) */
     //viewing as a sentence of responsibilites
     const sentences = employmenthistory[0]?.responsibilities?.split('.')
-    /*     console.log(sentences) */
 
     // academic fetching
     const [academic, setAcademic] = useState([]);
@@ -64,7 +60,7 @@ const ViewResume = () => {
             .then(res => res.json())
             .then(
                 data => {
-                    // console.log(data)
+                    
                     setAcademic(data)
                 }
             )
@@ -77,7 +73,6 @@ const ViewResume = () => {
             .then(res => res.json())
             .then(
                 data => {
-                    // console.log(data)
                     setTraining(data)
                 }
             )

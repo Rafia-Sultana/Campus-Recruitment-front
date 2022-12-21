@@ -21,7 +21,7 @@ const CvForm = () => {
         const description = e.target.description.value;
         const education = e.target.education.value;
 
-        console.log(name, title, linkdin, github, portfolio, email, phone, location, obj, language, technology, tools, projectName, projectLink, description, education)
+        // console.log((name, title, linkdin, github, portfolio, email, phone, location, obj, language, technology, tools, projectName, projectLink, description, education)
 
         const cvInformation = {
             name, title, linkdin, github, portfolio, email, phone, location, obj, language, technology, tools, projectName, projectLink, description, education
@@ -36,7 +36,7 @@ const CvForm = () => {
         })
             .then(res => res.json())
             .then((data) => {
-                console.log('Success:', data);
+                // console.log(('Success:', data);
                 e.target.reset()
 
             })
