@@ -17,10 +17,10 @@ const EmployeSignUp = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const handleEmployeSignUp = async (e) => {
         e.preventDefault()
-        const username = e.target.username.value;
+        
         const email = e.target.email.value;
         const password = e.target.password.value;
-        const confirmpassword = e.target.confirmpassword.value;
+        
         const companyname = e.target.companyname.value;
         const publishyear = e.target.publishyear.value;
         const companyaddress = e.target.companyaddress.value
@@ -30,9 +30,9 @@ const EmployeSignUp = () => {
         const contactmobile = e.target.contactmobile.value;
         const contactdesignation = e.target.contactdesignation.value;
         await createUserWithEmailAndPassword(email, password)
-        await updateProfile({ displayName: username })
+        await updateProfile({ displayName: contactname })
 
-        const userInfo = { username, email, confirmpassword, companyname, publishyear, companyaddress, url, contactname, contactemail, contactmobile, contactdesignation, country, district }
+        const userInfo = {  email, companyname, publishyear, companyaddress, url, contactname, contactemail, contactmobile, contactdesignation, country, district }
         await handleEmployee(userInfo)
 
     }
@@ -80,27 +80,33 @@ const EmployeSignUp = () => {
                 <h1 className='text-center mt-5 font-bold text-2xl'>Employer Registration Form</h1>
                 <h1 className='mx-5 font-semibold text-lg mt-3'>Account Information</h1>
                 <div className="flex gap-8 m-4">
-                    <input type="text" name='username' placeholder="UserName" className="input  input-bordered input-black w-full max-w-xs " />
+          {         /*  <input required
+                    type="text"
+                     name='username'
+                      placeholder="UserName"
+                       className="input  input-bordered input-black w-full max-w-xs " /> */}
                     <input
+                    required
                         name='email'
                         type="email"
-                        placeholder="Your Email"
+                        placeholder=" Email"
                         className="input input-bordered w-full max-w-xs"
 
                     />
-                    <input type="Password" name='password' placeholder="Password" className="input  input-bordered input-black w-full max-w-xs " />
-                    <input type="Password" name='confirmpassword' placeholder="Confirm Password" className="input  input-bordered input-black  w-full max-w-xs" />
+                    <input  required type="Password" name='password' placeholder="Password" className="input  input-bordered input-black w-full max-w-xs " />
+                  
                 </div>
                 <h1 className='mx-5 font-semibold text-lg mt-3'>Company Details Information</h1>
                 <div className="flex gap-8 m-4">
-                    <input type="text" name='companyname' placeholder="Company Name" className="input  input-bordered input-black w-1/2  " />
-                    <input type="text" name='publishyear' placeholder="Year of Establishment" className="input  input-bordered input-black w-2/6  " />
+                    <input   required type="text" name='companyname' placeholder="Company Name" className="input  input-bordered input-black w-1/2  " />
+                    <input   required type="text" name='publishyear' placeholder="Year of Establishment" className="input  input-bordered input-black w-2/6  " />
 
 
                 </div>
                 <h1 className='mx-5 font-semibold text-lg mt-3'>Company Address</h1>
                 <div className="mt-3">
                     <select
+                    required
                         defaultValue={'DEFAULT'}
                         onChange={handleChange}
                         className="select w-2/6 mb-4 ml-8" >
@@ -124,6 +130,7 @@ const EmployeSignUp = () => {
                 <div className=" w-3/6 mx-4 mb-4">
                     <div className="">
                         <select
+                        required
                             defaultValue={'DEFAULT'}
                             onChange={handleDistrictChange}
                             className="select w-3/6 mb-4 mx-4" >
@@ -166,6 +173,7 @@ const EmployeSignUp = () => {
 
                     </div>
                     <textarea
+                    required
                         type='text'
                         name='companyaddress'
                         className="textarea textarea-bordered w-4/6"
@@ -176,15 +184,15 @@ const EmployeSignUp = () => {
                 </div>
                 <div className="">
                     <h1 className='mx-5 font-semibold text-lg mt-3'>Website URL</h1>
-                    <input type="url" name='url' placeholder="" className="input input-bordered w-5/6 mx-4" />
+                    <input  required type="url" name='url' placeholder="" className="input input-bordered w-5/6 mx-4" />
                 </div>
                 {/* <h1 className='mx-5 font-semibold text-lg mt-3'>Contact</h1> */}
                 <h1 className='mx-5 font-semibold text-lg mt-3'>Primary Contact</h1>
                 <div className="grid grid-cols-2 gap-4 mx-4 mb-4">
-                    <input type="text" name='contactname' placeholder="Contact Person's Name" className="input  input-bordered input-black w-96  " />
-                    <input type="text" name='contactdesignation' placeholder="Contact Person's Designation" className="input  input-bordered input-black w-96  " />
-                    <input type="email" name='contactemail' placeholder="Contact Person's Email" className="input  input-bordered input-black w-96  " />
-                    <input type="tel" name='contactmobile' placeholder="Contact Person's Mobile" className="input  input-bordered input-black w-96  " />
+                    <input  required  type="text" name='contactname' placeholder="Contact Person's Name" className="input  input-bordered input-black w-96  " />
+                    <input  required type="text" name='contactdesignation' placeholder="Contact Person's Designation" className="input  input-bordered input-black w-96  " />
+                    <input  required type="email" name='contactemail' placeholder="Contact Person's Email" className="input  input-bordered input-black w-96  " />
+                    <input  required type="tel" name='contactmobile' placeholder="Contact Person's Mobile" className="input  input-bordered input-black w-96  " />
 
                 </div>
                 {/* {errorElement} */}

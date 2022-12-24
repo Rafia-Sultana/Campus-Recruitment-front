@@ -41,13 +41,13 @@ const CompanyProfile = () => {
                 <thead>
                     <tr>
                         <th class="border border-slate-300 ...">User Name</th>
-                        <th class="border border-slate-300 ...">{company?.username}</th>
+                        <th class="border border-slate-300 ...">{company?.contactname}</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td class="border border-slate-300 ... ">Email</td>
-                        <td class="border border-slate-300 ... px-5">{company?.email}</td>
+                        <td class="border border-slate-300 ... px-5">{company?.contactemail}</td>
                     </tr>
                     <tr>
                         <td class="border border-slate-300 ..."> Contact</td>

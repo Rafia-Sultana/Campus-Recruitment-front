@@ -41,6 +41,7 @@ const EmployeLogin = () => {
                                     type="email"
                                     placeholder="Your Email"
                                     className="input input-bordered w-full max-w-xs"
+                                    required
                                 />
 
                             </div>
@@ -53,6 +54,7 @@ const EmployeLogin = () => {
                                     type="password"
                                     placeholder="Your Password"
                                     className="input input-bordered w-full max-w-xs"
+                                    required
                                 />
                                 <br></br>
                             </div>

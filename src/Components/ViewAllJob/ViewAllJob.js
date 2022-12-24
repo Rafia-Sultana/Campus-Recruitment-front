@@ -29,10 +29,11 @@ const ViewAllJob = () => {
     }, [postJobs])
 
     useEffect(() => {
-        const searchMatch = postJobs.filter(postJob => postJob.jobTitle.toLowerCase().includes(search.toLowerCase()));
-        // console.log((searchMatch);
+        const searchMatch = postJobs.filter(postJob => postJob.jobTitle.toLowerCase().includes(search.toLowerCase()) ||
+        postJob.location.toLowerCase().includes(search.toLowerCase()) );
+       
         setFilterJobs(searchMatch);
-        // console.log((filterJobs);
+        
     }, [search, postJobs])
     return (
         <div>

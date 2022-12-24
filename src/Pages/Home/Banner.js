@@ -13,7 +13,7 @@ const Banner = () =>{
                 <h2>
                  We connect talented people with great companies.<br></br>Join our network today.
                 </h2>
-               <button className='aboutBtn' >Join Our Network</button>
+           
                </div>
             </div>
 

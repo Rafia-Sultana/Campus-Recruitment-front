@@ -55,7 +55,7 @@ const All = () => {
     return (
         <div>
 
-            <div className="flex justify-center mt-0  bg">
+       {    /*  <div className="flex justify-center mt-0  bg">
 
                 <form className='flex gap-0' action="" onSubmit={handleSearchSubmit}>
                     <div className="flex">
@@ -81,7 +81,7 @@ const All = () => {
 
                 </form>
 
-            </div>
+            </div> */}
             <div className="overflow-x-auto">
                 <table className="table w-full">
 

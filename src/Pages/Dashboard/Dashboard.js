@@ -61,6 +61,16 @@ const Dashboard = () => {
           })
 
   }, [])
+  const [historyofAppliedJob, setHistoryofAppliedJob] = useState([])
+    useEffect(() => {
+        fetch(`http://localhost:5000/percv/${user?.email}`, {
+        })
+            .then(res => res.json())
+            .then(data => {
+                setHistoryofAppliedJob(data)
+            })
+  
+    }, [])
   
 
   const url = `http://localhost:5000/candidates/${user?.email}`;
@@ -73,38 +83,44 @@ const Dashboard = () => {
              {user?.email && candidate?.role === "admin" &&
                 <>
                 <div className="card w-72 h-32 shadow-xl">
-                <div className="card-body bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-blue-500 hover:to-blue-800">
+                <div className="card-body bg-gradient-to-r from-cyan-200 to-blue-300 hover:from-blue-300 hover:to-blue-400">
                     <p className='font-semibold text-lg'>Total Registered Company</p>
-                    <p>{registeredCompany.length}</p>
+                    <p className='font-bold text-lg'>{registeredCompany.length}</p>
                   
                 </div>
             </div>
             <div className="card w-72 h-32 shadow-xl">
-                <div className="card-body bg-gradient-to-r from-pink-300 to-fuchsia-500 hover:from-fuchsia-600 hover:to-fuchsia-800">
+                <div className="card-body bg-gradient-to-r from-pink-200 to-fuchsia-300 hover:from-fuchsia-300 hover:to-fuchsia-400">
                     <p className='font-semibold text-lg'>Total Registered Candidate</p>
-                    <p>{registeredCandidate.length}</p>
+                    <p className='font-bold text-lg'>{registeredCandidate.length}</p>
                 </div>
             </div>
             <div className="card w-72 h-32 shadow-xl">
-                <div className="card-body bg-gradient-to-r from-green-300 to-emerald-600 hover:from-emerald-500 hover:to-emerald-800">
+                <div className="card-body bg-gradient-to-r from-green-200 to-emerald-300 hover:from-emerald-300 hover:to-emerald-400">
                     <p className='font-semibold text-lg'>Total Vacancy</p>
-                    <p>{postJobAdmin.length}</p>
+                    <p className='font-bold text-lg'>{postJobAdmin.length}</p>
                 </div>
             </div>
+            <div className="card w-72 h-32 shadow-xl">
+            <div className="card-body bg-gradient-to-r from-lime-200 to-teal-300 hover:from-lime-300 hover:to-teal-400">
+                <p className='font-semibold text-lg'>Total no. of Application</p>
+                <p className='font-bold text-lg'>{allCv.length}</p>
+            </div>
+        </div>
                 </>
              }
                {user?.email && candidate?.role === "candidate" &&
                 <>
                 <div className="card w-72 h-32 shadow-xl">
-                <div className="card-body bg-gradient-to-r from-rose-300 to-pink-600 hover:from-rose-500 hover:to-pink-800">
+                <div className="card-body bg-gradient-to-r from-rose-200 to-pink-300 hover:from-rose-300 hover:to-pink-400">
                     <p className='font-semibold text-lg'>Total Applied  Job</p>
-                    <p></p>
+                    <p className='font-bold text-lg'>{historyofAppliedJob.length}</p>
                 </div>
             </div>
             <div className="card w-72 h-32 shadow-xl">
-            <div className="card-body bg-gradient-to-r from-blue-300 to-indigo-600 hover:from-blue-500 hover:to-indigo-800">
+            <div className="card-body bg-gradient-to-r from-blue-200 to-indigo-300 hover:from-blue-300 hover:to-indigo-400">
                 <p className='font-semibold text-lg'>Total Vacancy Posted</p>
-                <p>{postJobAdmin.length}</p>
+                <p className='font-bold text-lg'>{postJobAdmin.length}</p>
             </div>
         </div>
                 </>
@@ -112,27 +128,22 @@ const Dashboard = () => {
              {user?.email && candidate?.role === "employee" &&
                 <>
                 <div className="card w-72 h-32 shadow-xl">
-                <div className="card-body bg-gradient-to-r from-blue-300 to-indigo-600 hover:from-blue-500 hover:to-indigo-800">
+                <div className="card-body bg-gradient-to-r from-blue-200 to-indigo-300 hover:from-blue-300 hover:to-indigo-400">
                     <p className='font-semibold text-lg'>Total Vacancy Posted</p>
-                    <p>{postJobs.length}</p>
+                    <p className='font-bold text-lg'>{postJobs.length}</p>
                 </div>
             </div>
+           
             <div className="card w-72 h-32 shadow-xl">
-                <div className="card-body bg-gradient-to-r from-lime-300 to-teal-600 hover:from-lime-500 hover:to-teal-800">
-                    <p className='font-semibold text-lg'>Total no. of Application</p>
-                    <p>{allCv.length}</p>
-                </div>
-            </div>
-            <div className="card w-72 h-32 shadow-xl">
-            <div className="card-body bg-gradient-to-r from-yellow-300 to-amber-600 hover:from-yellow-500 hover:to-amber-800">
-                <p className='font-semibold text-lg'>Total no. of sort listed Apllication</p>
-                <p>{perShortListed.length}</p>
+            <div className="card-body bg-gradient-to-r from-yellow-200 to-amber-300 hover:from-yellow-300 hover:to-amber-400">
+                <p className='font-semibold text-lg'>Total no. of sort listed Aplication</p>
+                <p className='font-bold text-lg'>{perShortListed.length}</p>
             </div>
         </div>
         <div className="card w-72 h-32 shadow-xl">
-        <div className="card-body bg-gradient-to-r from-red-200 to-orange-600 hover:from-red-400 hover:to-orange-700">
-            <p className='font-semibold text-lg'>Total no. of Rejected Apllication</p>
-            <p>{perRejected.length}</p>
+        <div className="card-body bg-gradient-to-r from-red-200 to-orange-300 hover:from-red-300 hover:to-orange-400">
+            <p className='font-semibold text-lg'>Total no. of Rejected Aplication</p>
+            <p className='font-bold text-lg'>{perRejected.length}</p>
         </div>
     </div>
          

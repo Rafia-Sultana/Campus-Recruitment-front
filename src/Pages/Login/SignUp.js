@@ -73,6 +73,7 @@ const SignUp = () => {
                                 type="text"
                                 placeholder="Your Name"
                                 className="input input-bordered w-full max-w-xs"
+                                required
                             />
 
                         </div>
@@ -85,7 +86,7 @@ const SignUp = () => {
                                 type="email"
                                 placeholder="Your Email"
                                 className="input input-bordered w-full max-w-xs"
-
+                                required
                             />
 
                         </div>
@@ -98,6 +99,7 @@ const SignUp = () => {
                                 type="password"
                                 placeholder="Password"
                                 className="input input-bordered w-full max-w-xs"
+                                required
 
                             />
                             <br></br>

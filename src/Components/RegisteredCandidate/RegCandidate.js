@@ -7,6 +7,7 @@ import auth from '../../firebase.init';
 const RegisteredCandidate = () => {
   const [user] = useAuthState(auth);
   const [registeredCandidate, setRegisteredCandidate] = useState([])
+
   const [toggle, setToggle] = useState(false)
 
   const url = `http://localhost:5000/role-user/candidate`;

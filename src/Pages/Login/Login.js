@@ -43,6 +43,7 @@ const Login = () => {
                                 type="email"
                                 placeholder="Your Email"
                                 className="input input-bordered w-full max-w-xs"
+                           required
                             />
 
                         </div>
@@ -55,6 +56,7 @@ const Login = () => {
                                 type="password"
                                 placeholder="Your Password"
                                 className="input input-bordered w-full max-w-xs"
+                                required
                             />
                             <br></br>
                         </div>
@@ -67,7 +69,7 @@ const Login = () => {
                         </small>
                     </p>
                     <div className="divider">OR</div>
-                    <SocialMedia></SocialMedia>
+              {     /*  <SocialMedia></SocialMedia> */}
 
                 </div>
             </div>

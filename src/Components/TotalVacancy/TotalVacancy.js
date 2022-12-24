@@ -2,9 +2,11 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 
+import ModalTotalVacancy from './ModalTotalVacancy';
 
 const TotalVacancy = () => {
   const [postJobs, setPostJobs] = useState([])
+ 
   useEffect(() => {
     fetch('http://localhost:5000/user')
       .then(res => res.json())
@@ -32,13 +34,17 @@ const TotalVacancy = () => {
 
             {
               postJobs.map((postJob, index) => <tr key={index}>
-                <td>{postJob.name}</td>
+              
+                <td>{postJob.jobName}</td>
                 <td>{postJob.jobTitle}</td>
                 <td>{postJob.location}</td>
-                <td>
+               
+                
+   <label htmlFor={`my-modal-${postJob._id}`} className="btn">Details</label>
 
+<ModalTotalVacancy postJob={postJob} ></ModalTotalVacancy>
 
-                </td>
+                
               </tr>
 
               )

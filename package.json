@@ -18,6 +18,7 @@
     "react-to-print": "^2.14.10",
     "react-toastify": "^9.1.1",
     "rsc": "^1.0.3",
+    "rsuite": "^5.23.3",
     "sweetalert": "^2.1.2",
     "web-vitals": "^2.1.4"
   },

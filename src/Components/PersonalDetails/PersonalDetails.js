@@ -413,12 +413,7 @@ const PersonalDetails = () => {
                                     value="save"
                                     disabled
                                 />
-                                <input
-                                    className='btn btn-warning w-full max-w-xs text-white'
-                                    type="submit"
-                                    value="Edit"
-
-                                />
+                         
 
                                 <ToastContainer />
                             </form>)}</p>

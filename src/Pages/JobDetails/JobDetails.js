@@ -124,12 +124,12 @@ const JobDetails = () => {
                                 <p className='mt-1' >{postJobs.last_date}</p>
                             </div>
 
-                            <button className='w-full  mt-4'>
+                         { /*   <button className='w-full  mt-4'>
                                 <Link to={`/apply/${postJobs._id}`}
                                     className='w-full btn btn-warning  ease-in duration-300 ... button'
 
                                 >Apply Now </Link>
-                            </button>
+                            </button> */}
                         </div>
 
 

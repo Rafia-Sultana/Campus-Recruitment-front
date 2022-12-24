@@ -17,7 +17,7 @@ const Center = () =>{
             By representing you and your interests, our Talent Acquisition consultants will ensure to properly set expectations and next steps and work to get you in front of the best companies with the best opportunities in the market today. Whether it be on-site work or something fully remote, the search for your ideal job begins when you become part of our growing network of professionals. Click here to join our network.<br></br>
             </p>
             <br></br>
-            <button className="btn btn-outline btn-ghost  btn btn-wide">Join Our Network</button>
+           
             </div>
             </Fade>
             </div>
@@ -34,7 +34,7 @@ const Center = () =>{
           By representing you and your interests, our Talent Acquisition consultants will ensure to properly set expectations and next steps and work to get you in front of the best companies with the best opportunities in the market today. Whether it be on-site work or something fully remote, the search for your ideal job begins when you become part of our growing network of professionals. Click here to join our network.<br></br>
           </p>
           <br></br>
-          <button className="btn btn-outline btn-ghost  btn btn-wide">Join Our Network</button>
+          
           </div>
           </Fade>
           <img className='w-1/2' src={employee} alt=''/>

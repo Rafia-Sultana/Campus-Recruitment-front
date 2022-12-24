@@ -17,9 +17,17 @@ const Header = () => {
             </div>
             <div>
                 <NavLink to='/' >HOME</NavLink>
-                <NavLink to='/dashboard' >DASHBOARD</NavLink>
+                {
+                    user?
+                    <>
+                    <NavLink to='/dashboard' >DASHBOARD</NavLink>
+                    </>:
+                    <></>
+                }
+                {/* <NavLink to='/dashboard' >DASHBOARD</NavLink> */}
               
                 <NavLink to='/about' >ABOUT </NavLink>
+                <NavLink to='/viewalljobs' >JOBS</NavLink> 
                 {user ?
                     <>
 
@@ -30,7 +38,7 @@ const Header = () => {
                     <>
                         <NavLink to='/login' >CANDIDATE</NavLink>
                         <NavLink to='/employelogin' >EMPLOYEE</NavLink>
-                        <NavLink to='/adminlogin' >ADMIN</NavLink>
+                     {  /*  <NavLink to='/adminlogin' >ADMIN</NavLink> */}
                     </>
                 }
 

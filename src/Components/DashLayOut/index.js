@@ -44,9 +44,9 @@ export function DashLayOut() {
                                     </div>
                                 </div>
 
-                                <Link to='/dashboard/candidatesorted' className=" ">Sort Listed Application </Link>
-                                <Link to='/dashboard/viewvacancy' className=" ">View Vacancy</Link>
-                                <Link to='/dashboard/history' className=" ">History of applied job</Link>
+                                <Link to='/dashboard/candidatesorted' className="font-medium mx-3">Sort Listed Application </Link>
+                                <Link to='/dashboard/viewvacancy' className="font-medium mt-2 mx-3">View Vacancy</Link>
+                                <Link to='/dashboard/history' className=" font-medium mt-2 mx-3">History of applied job</Link>
 
                             </>
                         }
@@ -82,9 +82,9 @@ export function DashLayOut() {
                                     <div>
                                         <Link to='/dashboard/viewpostjob' className="mx-4 mb-10 font-medium">View Post Jobs </Link>
                                     </div>
-                                    <div>
-                                        <Link to='/dashboard/companyreport' className="mx-4 my-5 font-medium ">Report </Link>
-                                    </div>
+                                  <div>
+                                    {  /*   <Link to='/dashboard/companyreport' className="mx-4 my-5 font-medium ">Report </Link> */}
+                                    </div> 
                                 </div>
                             </>
                         }

@@ -3,10 +3,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+
 const AddVacancy = () => {
   const [user] = useAuthState(auth);
 
   const [jobTitle, setJobTitle] = useState("")
+
 
   const handleJobPost = (e) => {
     e.preventDefault()
@@ -185,7 +187,7 @@ const AddVacancy = () => {
               <span className="label-text">Monthly Salary</span>
             </label>
             <textarea required
-              name='salary'
+              name='salary' 
               placeholder='$'
               className="textarea textarea-bordered w-96 h-8"></textarea>
           </div>

@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 
+
 const ViewVacancy = () => {
     const [allCv, setAllCv] = useState([]);
 
@@ -72,6 +73,8 @@ const ViewVacancy = () => {
             .then(res => res.json())
             .then(data => {
                 setAppliedJob(data)
+                   
+              
             })
 
     }, [])
@@ -108,7 +111,7 @@ const ViewVacancy = () => {
 
                         {
                             postJobs.map((postJob, index) => <tr key={index}>
-                                <td>{postJob.name}</td>
+                                <td>{postJob.jobName}</td>
                                 <td>{postJob.jobTitle}</td>
                                 <td>{postJob.location}</td>
                                 <td>{postJob.apply_date} </td>
@@ -123,8 +126,10 @@ const ViewVacancy = () => {
                                         onClick={(e) => handleApplyjob(postJob.uid, postJob._id,postJob, e)}
                                       
                                         className='btn btn-success p-4'  >Apply for Job</button>
-
+                                       
                                 </td>
+                                
+                              
                             </tr>
 
                             )
